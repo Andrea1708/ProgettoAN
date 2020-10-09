@@ -1,6 +1,6 @@
 package OProject.ANSpringBootApp.Model;
 /**
- * It rappresents the import of Covid-19's dates through the call "/premium/country/data"
+ * It represents the amount of Covid-19's data through the call "/live/country"
  */
 public class nation {
 	/**
