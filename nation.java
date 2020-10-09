@@ -4,7 +4,7 @@ package OProject.ANSpringBootApp.Model;
  */
 public class nation {
 	/**
-	 * recognizer of nation in the World
+	 * nation's recognizer in the World
 	 */
 	private String country;
 	/**
