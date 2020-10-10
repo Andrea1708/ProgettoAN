@@ -2,8 +2,7 @@ package OProject.ANSpringBootApp.Exception;
 
 public class ExceptionManager {
 	private String message;
-	private String nome;
-	private String surname;
+
 	
 	
 	/**
@@ -12,25 +11,8 @@ public class ExceptionManager {
 	 */
 	public ExceptionManager() {
 		message = "No message";
-		nome = "no nome";
-		surname = "no surname";
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 
 	public ExceptionManager( String message) {
 		super();
