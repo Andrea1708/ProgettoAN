@@ -6,7 +6,7 @@ public class URLservice {
 	/**
 	 * Metodo che ci permette di completare l' URL con il nome della nazione ricercata
 	 */
-	public static String getURL(String Slug) {
-		return  "https://api.covid19api.com/live/country/"+Slug;
+	public static String getURL(String country ) {
+		return  "https://api.covid19api.com/live/country/"+country;
 		}
 }

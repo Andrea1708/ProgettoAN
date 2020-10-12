@@ -6,7 +6,7 @@ public class nation {
 	/**
 	 * recognizer of nation in the World
 	 */
-	private String country;
+	public String country;
 	/**
 	 * numeri totale di persone che hanno contratto il virus
 	 */

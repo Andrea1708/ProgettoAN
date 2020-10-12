@@ -1,6 +1,5 @@
 package OProject.ANSpringBootApp.Util;
 
-public class Filter {
-	
+public class FilterData {
 
 }

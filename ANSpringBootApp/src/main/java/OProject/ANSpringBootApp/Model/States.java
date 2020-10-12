@@ -8,7 +8,7 @@ public class States {
 		/**
 		 * nome dello stato da mettere sul rest
 		 */
-		public String Slug;
+		private String Slug;
 		/**
 		 *  codice di ogni stato
 		 */
