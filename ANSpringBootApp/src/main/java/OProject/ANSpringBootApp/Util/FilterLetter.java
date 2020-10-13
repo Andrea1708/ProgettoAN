@@ -2,7 +2,6 @@ package OProject.ANSpringBootApp.Util;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import OProject.ANSpringBootApp.JSON.Json;
 import OProject.ANSpringBootApp.Model.nation;
 
