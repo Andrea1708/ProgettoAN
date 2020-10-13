@@ -10,7 +10,7 @@ public class States {
 		 */
 		private String Slug;
 		/**
-		 *  codice di ogni stato
+		 *  country's slug
 		 */
 		private String ISO2;
 
