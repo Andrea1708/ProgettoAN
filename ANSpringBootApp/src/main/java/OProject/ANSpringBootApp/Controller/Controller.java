@@ -16,13 +16,10 @@ public class Controller {
 
 	/**
 	 * gestione della rotta "/Countries" per restituire il dateset
-	 * @Param Country nome del paese
-	 * @Param Slug    nome da inserire nel rest 
-	 * @Param ISO2    codice di ogbi paese
 	 */
 	@RequestMapping (value="/Countries", method = RequestMethod.GET)
 public ResponseEntity<Object> getReadURL() throws JSONException {
-		return new ResponeEntity<>(JasonAD2.getReadURL(),HttpStatus.OK);
+		return new ResponeEntity<>(Json.getReadURL(),HttpStatus.OK);
 	}
 	
 	/**

@@ -1,14 +1,14 @@
 package OProject.ANSpringBootApp.JSON;
 
 import java.util.ArrayList;
-
+import java.io.*;
 import OProject.ANSpringBootApp.Model.nation;
 import OProject.ANSpringBootApp.Service.URLservice;
 
 public class Json {
-	public  JSONObject readURL() {
+	public static <JSONObject> JSONObject readURL() {
 		try {
-			String myURL = 'https://api.covid19api.com/countries';
+			String myURL = "https://api.covid19api.com/countries";
 			StringBuldier string = new StringBuilder();
 			URL url = new URL(myURL);
 			BufferedRader reader= new BufferedReader(new InputStreamReader(url.openStream()));
@@ -38,7 +38,7 @@ public class Json {
 	 * }
 	 */
 
-	public static ArrayList<String> SlugTake(JSONObject json) {
+	public static <JSONObject> ArrayList<String> SlugTake(JSONObject json) {
 		ArrayList<String> list = new ArrayList<String>();
 		if (json != null) {
 			JSONArray alldata = json.optJSONArray("alldata");
@@ -58,7 +58,7 @@ public class Json {
 
 	}
 
-	public static JSONObject readURL2() {
+	public static <JSONObject> JSONObject readURL2() {
 		try {
 
 			String myURL = URLservice.getURL(Slug);
@@ -79,7 +79,7 @@ public class Json {
 
 }
 
-public static ArrayList<nation> JSONParser(JSONObject json) {
+public static <JSONObject, JSONArray> ArrayList<nation> JSONParser(JSONObject json) {
 	ArrayList<nation> list= new ArrayList<nation>();
 	
 	if(json != null) {

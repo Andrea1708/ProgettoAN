@@ -26,11 +26,6 @@ this.country = country;
 this.Slug = Slug;
 this.ISO2 = ISO2;
 }
-/**
- *Capire se va inserito qualcosa relativo al getCountries 
- */
-
-
 
 public String getCountry() {
 	return country;
@@ -54,4 +49,5 @@ public String getISO2() {
 
 public void setISO2(String iSO2) {
 	ISO2 = iSO2;
+}
 }
