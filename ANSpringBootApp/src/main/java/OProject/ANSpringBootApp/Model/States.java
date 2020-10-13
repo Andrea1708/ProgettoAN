@@ -2,7 +2,7 @@ package OProject.ANSpringBootApp.Model;
 
 public class States {
 		/**
-		 * recognizer of nation in the World
+		 * recognizer of world's nation
 		 */
 		private String country;
 		/**
