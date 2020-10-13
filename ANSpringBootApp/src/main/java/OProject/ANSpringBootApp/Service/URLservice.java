@@ -7,6 +7,7 @@ public class URLservice {
 	 * Method that modifies the URL by adding the name of the chosen country
 	 */
 	public static String getURL(String country ) {
+		
 		return  "https://api.covid19api.com/live/country/"+country;
 		}
 }
