@@ -2,17 +2,20 @@ package OProject.ANSpringBootApp.Util;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
+import OProject.ANSpringBootApp.JSON.Json;
 import OProject.ANSpringBootApp.Model.nation;
 
 public class FilterLetter {
-	public list<nation> JOLLY (List<nation> lista, string letter){
-	Scanner input = new Scanner(System.in);
-	System.out.print("Inserisci carattere desiderato");
-	String letter = input.next();
-	
-		lista.removeIf(letter!= nation.country)
-			return System.out.print("Gli stati trovati sono:"+nation(i));
-		else 
+	public static ArrayList<String> getListaNazioni(String Letter){
+	ArrayList<String> ListaNazioni = new ArrayList<String>();
+	ArrayList<String> NazioniTrovate = new ArrayList<String>();
+	Json Prova = new Json();
+	ListaNazioni = Prova.SlugTake();
+	for (int i=0; i < ListaNazioni.lenght; i++) {
+		if(Letter == ListaNazioni.get(i))
+			NazioniTrovate.add(ListaNazioni.get(i));
+		}
+	System.out.print("Le nazioni trovate sono:"+NazioniTrovate);
+	}
 }
