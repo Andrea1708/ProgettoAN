@@ -11,8 +11,7 @@ public class FilterLetter {
 	Scanner input = new Scanner(System.in);
 	System.out.print("Inserisci carattere desiderato");
 	String letter = input.next();
-	
-		lista.removeIf(letter!= nation.country)
+	lista.removeIf(letter!= nation.country)
 			return System.out.print("Gli stati trovati sono:"+nation(i));
 		else 
 }
