@@ -4,7 +4,7 @@ public class URLservice {
 
 	public final static String URL = "https://api.covid19api.com/live/country/";
 	/**
-	 * Metodo che ci permette di completare l' URL con il nome della nazione ricercata
+	 * Method that modifies the URL by adding the name of the chosen country
 	 */
 	public static String getURL(String country ) {
 		return  "https://api.covid19api.com/live/country/"+country;
