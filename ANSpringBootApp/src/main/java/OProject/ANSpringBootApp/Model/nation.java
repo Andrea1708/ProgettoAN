@@ -1,36 +1,36 @@
 package OProject.ANSpringBootApp.Model;
 /**
- * It rappresents the import of Covid-19's dates through the call "/live/country/"
+ * It represents the Covid-19's data through the call "/live/country/"
  */
 public class nation {
 	/**
-	 * recognizer of nation in the World
+	 * recognizer of world's nation
 	 */
 	public String country;
 	/**
-	 * numeri totale di persone che hanno contratto il virus
+	 * total cases
 	 */
 	private int confirmed;
 	/**
-	 *  numero cittadini morti
+	 *  dead citizens
 	 */
 	private int deaths;
 	/**
-	 * numeri cittadini guariti
+	 * recovered citizens
 	 */
 	private int recovered;
 	/**
-	 * persone attualmente positive
+	 * currently positive citizens
 	 */
 	private int active;
 	/**
-	 * Date intervallo che si considera
+	 * data about a chosen period
 	 */
 	private Date date;
 	
 	
 	/**
-	 * Costruttore iniziale
+	 * initial constructor
 	 */
 	public nation() {
 		country = "no country";
