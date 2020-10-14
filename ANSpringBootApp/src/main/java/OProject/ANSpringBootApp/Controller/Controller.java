@@ -22,7 +22,7 @@ public class Controller {
 	 */
 	@RequestMapping (value="/Countries", method = RequestMethod.GET)
 public ResponseEntity<Object> getReadURL() throws JSONException {
-		return new ResponeEntity<>(JasonAD2.getReadURL(),HttpStatus.OK);
+		return new ResponeEntity<>(Json.getReadURL(),HttpStatus.OK);
 	}
 	
 	/**

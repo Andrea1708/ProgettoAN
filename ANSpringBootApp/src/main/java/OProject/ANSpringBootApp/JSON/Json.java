@@ -1,23 +1,27 @@
 package OProject.ANSpringBootApp.JSON;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
+
 
 import OProject.ANSpringBootApp.Model.nation;
 import OProject.ANSpringBootApp.Service.URLservice;
 
-public class Json {
-	public  JSONObject readURL() {
+public class Json <JSONObject> {
+	public   JSONObject readURL() {
 		try {
-			String myURL = 'https://api.covid19api.com/countries';
-			StringBuldier string = new StringBuilder();
+			String myURL = "https://api.covid19api.com/countries";
+			StringBuilder string = new StringBuilder();
 			URL url = new URL(myURL);
-			BufferedRader reader= new BufferedReader(new InputStreamReader(url.openStream()));
+			BufferedReader reader= new BufferedReader(new InputStreamReader(url.openStream()));
 			String phrase = "";
 			while ((phrase = reader.readLine()) != null) {
 				string.append(phrase);
 			}
 			reader.close();
-			JSONObject json= new JSONObject(string.toString());
+			JSONObject json= new JSONObject (string.toString());
 			return json;
 		   }catch (Exception e) {
 			   return null;
@@ -38,7 +42,7 @@ public class Json {
 	 * }
 	 */
 
-	public static ArrayList<String> SlugTake(JSONObject json) {
+	public static <JSONObject> ArrayList<String> SlugTake(JSONObject json) {
 		ArrayList<String> list = new ArrayList<String>();
 		if (json != null) {
 			JSONArray alldata = json.optJSONArray("alldata");
@@ -56,9 +60,9 @@ public class Json {
 		return list;
 	}
 
-	}
+	
 
-	public static JSONObject readURL2() {
+	public static  JSONObject readURL2() {
 		try {
 
 			String myURL = URLservice.getURL(Slug);
@@ -79,25 +83,21 @@ public class Json {
 
 }
 
-public static ArrayList<nation> JSONParser(JSONObject json) {
+public static <JSONObject> ArrayList<nation> JSONParser(JSONObject json) {
 	ArrayList<nation> list= new ArrayList<nation>();
 	
 	if(json != null) {
+		int i=0;
+		nation COCA = new nation();
 		JSONArray alldata = json.optJSONArray("alldata");
 		if( alldata != null) {
 			
-			for(int i=0; i< alldata.length; i++) {
-				
-				nation COCA = new nation();
-				}
+			for(i = 0; i < alldata.length; i++) {
 				try {
 					COCA.setCountry(alldata.getJSONObject(i).getString("Country"));
 				}catch (JSONException e) {
 					COCA.setCountry("No Country Found");
 				}
-				/**
-				 * Controllare se servono errri per questi qui sotto
-				 */
 				try {
 					COCA.setConfirmed(alldata.getJSONObject(i).get("Confirmed"));
 				}catch (JSONException e) {
@@ -124,6 +124,7 @@ public static ArrayList<nation> JSONParser(JSONObject json) {
 					COCA.setDate("No Date");
 				}
 				list.add(COCA);
+			}
 			}
 		}
 	}
