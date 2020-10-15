@@ -1,4 +1,5 @@
 package OProject.ANSpringBootApp.Model;
+
 /**
  * It represents the Covid-19's data through the call "/live/country/"
  */
@@ -26,7 +27,7 @@ public class nation {
 	/**
 	 * data about a chosen period
 	 */
-	private Date date;
+	private String date;
 	
 	
 	/**
@@ -38,14 +39,15 @@ public class nation {
 		deaths = 0;
 		recovered = 0;
 		active = 0;
+		date = "No date";
 	}
-	public nation (String country, int confirmed, int deaths, int recovered, int active) {
+	public nation (String country, int confirmed, int deaths, int recovered, int active, String date) {
 	this.country = country;
 	this.confirmed = confirmed;
 	this.deaths = deaths;
 	this.recovered = recovered;
 	this.active = active;
-
+	this.date = date;
 	}
 	
 	public String getCountry() {
@@ -97,14 +99,12 @@ public class nation {
 	public void setActive(int active) {
 		this.active = active;
 	}
-
-
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-
-
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
-		
+	
+
+	}
