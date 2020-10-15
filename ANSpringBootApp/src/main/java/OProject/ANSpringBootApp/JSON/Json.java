@@ -42,7 +42,7 @@ public class Json <JSONObject> {
 	 * }
 	 */
 
-	public static <JSONObject> ArrayList<String> SlugTake(JSONObject json) {
+	public static ArrayList<String> SlugTake (JSONObject json) {
 		ArrayList<String> list = new ArrayList<String>();
 		if (json != null) {
 			JSONArray alldata = json.optJSONArray("alldata");
@@ -57,11 +57,12 @@ public class Json <JSONObject> {
 				}
 			}
 		}
+		
 		return list;
 	}
 
 	
-	public static <JSONObject> ArrayList<String> DataTake(JSONObject json) {
+	public static ArrayList<String> DataTake(JSONObject json) {
 		ArrayList<String> roster = new ArrayList<String>();
 		if (json != null) {
 			JSONArray alldata = json.optJSONArray("alldata");
@@ -69,7 +70,7 @@ public class Json <JSONObject> {
 				for (int i = 0; i < alldata.length; i++) {
 					try {
 						String Pippo  = alldata.getJSONObject(i).get("Data");
-						list.add(Pippo);
+						roster.add(Pippo);
 					} catch (JSONException e) {
 
 					}
@@ -80,12 +81,6 @@ public class Json <JSONObject> {
 	}
 	
 	
-	
-	
-	
-	
-	
-
 	public static  JSONObject readURL2() {
 		try {
 
@@ -133,7 +128,7 @@ public static <JSONObject> ArrayList<nation> JSONParser(JSONObject json) {
 					COCA.setDeaths(0);
 				}
 				try {
-					COCA.setRecovered(alldata.getJSONObject(i).get("Recovered"))
+					COCA.setRecovered(alldata.getJSONObject(i).get("Recovered"));
 				}catch (JSONException e) {
 					COCA.setRecovered(0);
 				}
