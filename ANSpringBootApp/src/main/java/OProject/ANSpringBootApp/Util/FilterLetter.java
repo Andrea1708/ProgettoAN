@@ -12,7 +12,7 @@ public class FilterLetter {
 	ArrayList<String> NazioniTrovate = new ArrayList<String>();
 	Json Prova = new Json();
 	ListaNazioni = Prova.SlugTake();
-	for (int i=0; i < ListaNazioni.lenght; i++) {
+	for (int i=0; i < ListaNazioni.length ; i++) {
 		if(Letter == ListaNazioni.get(i))
 			NazioniTrovate.add(ListaNazioni.get(i));
 		}

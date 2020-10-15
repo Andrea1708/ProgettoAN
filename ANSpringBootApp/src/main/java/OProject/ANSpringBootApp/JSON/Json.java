@@ -61,6 +61,30 @@ public class Json <JSONObject> {
 	}
 
 	
+	public static <JSONObject> ArrayList<String> DataTake(JSONObject json) {
+		ArrayList<String> roster = new ArrayList<String>();
+		if (json != null) {
+			JSONArray alldata = json.optJSONArray("alldata");
+			if (alldata != null) {
+				for (int i = 0; i < alldata.length; i++) {
+					try {
+						String Pippo  = alldata.getJSONObject(i).get("Data");
+						list.add(Pippo);
+					} catch (JSONException e) {
+
+					}
+				}
+			}
+		}
+		return roster;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	public static  JSONObject readURL2() {
 		try {
@@ -84,7 +108,7 @@ public class Json <JSONObject> {
 }
 
 public static <JSONObject> ArrayList<nation> JSONParser(JSONObject json) {
-	ArrayList<nation> list= new ArrayList<nation>();
+	ArrayList<nation> list = new ArrayList<nation>();
 	
 	if(json != null) {
 		int i=0;
@@ -128,4 +152,5 @@ public static <JSONObject> ArrayList<nation> JSONParser(JSONObject json) {
 			}
 		}
 	}
+
 }

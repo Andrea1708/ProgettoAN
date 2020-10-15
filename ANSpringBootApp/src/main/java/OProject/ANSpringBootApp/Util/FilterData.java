@@ -2,6 +2,8 @@ package OProject.ANSpringBootApp.Util;
 
 import java.util.ArrayList;
 
+import OProject.ANSpringBootApp.JSON.Json;
+
 public class FilterData {
 	public static ArrayList<String> getListaDateNazioni(String data, String paese) {
 		ArrayList<String> ListaNazioni = new ArrayList<String>();
@@ -19,6 +21,5 @@ public class FilterData {
 					} /** else lanciare exception no date */
 				} /** else lanciare exception NoCountry */
 			}
-
-	} return PaesiDateTrovati;
+	return PaesiDateSelezionati;
 }
