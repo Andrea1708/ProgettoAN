@@ -28,13 +28,5 @@ public class FilterData {
 		return PaesiDateSelezionati;
 	}
 	
-public static ArrayList<nation> getInformation (String data, String paese){
-	 nation PaeseCercato = new nation();
-	 PaeseCercato.setCountry(paese);
-	 PaeseCercato.setDate(data);
-	 
-
-
-	
-	} 
+ 
 }
