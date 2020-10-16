@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +17,6 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 
 @RestController
 public class Controller {
-	/**
-	 * @Autowired annotation allow to start the costructer automatically at Spring's launch
-	 */
-	@Autowired
 
 	/**
 	 * management of the route "/Countries" that return the dataset
@@ -43,10 +38,10 @@ public ResponseEntity<Object> getReadURL() throws JSONException
 	/**
 	 * management of the route "/live/country" that return the dataset 
 	 */
-	@RequestMapping(value = "/live/country", method= RequestMethod.GET)
+	/**@RequestMapping(value = "/live/country", method= RequestMethod.GET)
 public ResponseEntity<Object> getreadURL2() throws JSONException 
 	{
-		return new ResponseEntity<>(JsonProcessing.readURL2(),HttpStatus.OK);
+		return new ResponseEntity<>(Run,HttpStatus.OK);
 	}
 	
 	

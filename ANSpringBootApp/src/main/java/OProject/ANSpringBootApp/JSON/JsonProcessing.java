@@ -32,28 +32,26 @@ public class JsonProcessing {
 	public static ArrayList<String> SlugTake (JSONObject json) {
 		ArrayList<String> list = new ArrayList<String>();
 		if (json != null) {
-			JSONArray alldata = json.optJSONArray("data");
-			if (alldata != null) {
-				for (int i = 0; i < alldata.length(); i++) {
+				for (int i = 0; i < json.length(); i++) {
 					try {
-						JSONObject Prova = alldata.getJSONObject(i);
-						String name = (String)Prova.get("Slug");
-						list.add(name);
-					} catch (JSONException e) {
-
+					String name = (String) json.get("Slug");
+					list.add(name);
+					}
+					catch (JSONException e) {
 					}
 				}
 			}
-		}
-		
 		return list;
 	}
+		
+	
+	
 
 	
-public static ArrayList<String> DataTake(JSONObject json) {
+	/**	public static ArrayList<String> DataTake(JSONObject json) {
 		ArrayList<String> roster = new ArrayList<String>();
 		if (json != null) {
-			JSONArray alldata = json.optJSONArray("data");
+			JSONArray alldata = json.optJSONArray();
 			if (alldata != null) {
 				for (int i = 0; i < alldata.length(); i++) {
 					try {
@@ -134,5 +132,5 @@ public static ArrayList<nation> JSONParser(JSONObject json) {
 			}
 			}
 		}
-	}
+	}**/
 	}

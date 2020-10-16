@@ -1,6 +1,6 @@
 package OProject.ANSpringBootApp.Exception;
 
-public class NoCountry extends ExceptionManager {
+public class NoCountry {
 
 		private static final long serialVersionUID = 1L; /** vedere bene cosa serve la serial vesion*/
 
