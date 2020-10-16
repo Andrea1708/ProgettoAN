@@ -1,5 +1,7 @@
 package OProject.ANSpringBootApp.Model;
 
+import java.util.Calendar;
+
 /**
  * It represents the Covid-19's data through the call "/live/country/"
  */
@@ -39,7 +41,7 @@ public class nation {
 		deaths = 0;
 		recovered = 0;
 		active = 0;
-		date = "No date";
+		date = "no date";
 	}
 	public nation (String country, int confirmed, int deaths, int recovered, int active, String date) {
 	this.country = country;
@@ -99,12 +101,20 @@ public class nation {
 	public void setActive(int active) {
 		this.active = active;
 	}
+	/*public Calendar getDate() {
+		return date;
+	}
+	public void setDate(Calendar date) {
+		this.date = date;
+	}*/
 	public String getDate() {
 		return date;
 	}
 	public void setDate(String date) {
 		this.date = date;
 	}
+	
+	
 	
 
 	}
