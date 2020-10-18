@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
-
-
+import OProject.ANSpringBootApp.Model.Nation;
+import OProject.ANSpringBootApp.Model.States;
 
 @RestController
 public class Controller {
@@ -25,48 +25,19 @@ public class Controller {
 	 * @Param ISO2    codice di ogni paese
 	 */
 	@RequestMapping(value="/Countries", method = RequestMethod.GET)
-public ResponseEntity<Object> getReadURL() throws JSONException 
-	{
-		
-		ArrayList<String> Prova = new ArrayList<String>();
+public ResponseEntity<Object> getAllCountries() throws JSONException 
+{
+		ArrayList<States> Prova = new ArrayList<States>();
 		JSONObject json = JsonProcessing.readURL();
-		Prova = JsonProcessing.SlugTake(json);
+		Prova = JsonProcessing.InformationTake(json);
 		return new ResponseEntity<>(Prova,HttpStatus.OK);
-		
-	}
-	
-	/**
-	 * management of the route "/live/country" that return the dataset 
-	 */
-	/**@RequestMapping(value = "/live/country", method= RequestMethod.GET)
-public ResponseEntity<Object> getreadURL2() throws JSONException 
+}
+	@RequestMapping(value="/live/", method = RequestMethod.GET)
+	public ResponseEntity<Object> getAllCountries() throws JSONException 
 	{
-		return new ResponseEntity<>(Run,HttpStatus.OK);
-	}
-	
-	
-	
-/**	@RequestMapping(value = "/", method= RequestMethod.GET)
-public ResponseEntity<Object> getSlug() throws JSONException
-	{
-		return new ResponseEntity<>(Json.SlugTake(),HttpStatus.OK);
-	}
-
-	
-	
-	@RequestMapping(value = "", method= RequestMethod.GET)
-	public ResponseEntity<Object> getData() throws JSONException 
-	{
-			return new ResponseEntity<>(Json.DataTake,HttpStatus.OK);
-	}
-
-	
-	
-	
-	@RequestMapping(value = "", method= RequestMethod.POST)
-	public ResponseEntity<Object> Parser() throws JSONException
-	{
-			return new ResponseEntity<>(Json.JsonParser,HttpStatus.OK);
-	}*/
+			ArrayList<States> Prova = new ArrayList<States>();
+			JSONObject json = JsonProcessing.readURL();
+			Prova = JsonProcessing.InformationTake(json);
+			return new ResponseEntity<>(Prova,HttpStatus.OK);	
 
 }

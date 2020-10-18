@@ -1,136 +1,109 @@
 package OProject.ANSpringBootApp.JSON;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import org.json.*;
 
-import OProject.ANSpringBootApp.Model.nation;
+
+import OProject.ANSpringBootApp.Model.Nation;
+import OProject.ANSpringBootApp.Model.States;
 import OProject.ANSpringBootApp.Service.URLservice;
 
 public class JsonProcessing {
-	public static  JSONObject readURL() {
-		try {
-			String myURL = "https://api.covid19api.com/countries";
-			StringBuilder string = new StringBuilder();
-			URL url = new URL(myURL);
-			BufferedReader reader= new BufferedReader(new InputStreamReader(url.openStream()));
-			String phrase = "";
-			while ((phrase = reader.readLine()) != null) {
-				string.append(phrase);
-			}
-			reader.close();
-			JSONObject json= new JSONObject (string.toString());
-			return json;
-			
-		   }catch (Exception e) {
-			   return null;
-		   }
-	}
-		
-	public static ArrayList<String> SlugTake (JSONObject json) {
-		ArrayList<String> list = new ArrayList<String>();
-		if (json != null) {
-				for (int i = 0; i < json.length(); i++) {
-					try {
-					String name = (String) json.get("Slug");
-					list.add(name);
-					}
-					catch (JSONException e) {
-					}
-				}
-			}
-		return list;
-	}
-		
-	
-	
 
-	
-	/**	public static ArrayList<String> DataTake(JSONObject json) {
-		ArrayList<String> roster = new ArrayList<String>();
-		if (json != null) {
-			JSONArray alldata = json.optJSONArray();
-			if (alldata != null) {
-				for (int i = 0; i < alldata.length(); i++) {
-					try {
-						String Pippo = (String)alldata.getJSONObject(i).get("Date");
-						roster.add(Pippo);
-					} catch (JSONException e) {
 
-					}
-				}
-			}
+public static JSONObject readURL() {
+	try{
+		String myURL = "https://api.covid19api.com/countries";
+		StringBuilder string = new StringBuilder();
+		URL url = new URL(myURL);
+		BufferedReader reader= new BufferedReader(new InputStreamReader(url.openStream()));
+		String phrase="";
+		while((phrase = reader.readLine()) != null) {
+			string.append(phrase);
 		}
-		return roster;
-	}
-	
-	
-	public static JSONObject readURL2() {
-		try {
-
-			String myURL = URLservice.getURL("Slug");
-			StringBuilder string = new StringBuilder();
-			URL url = new URL(myURL);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-			String phrase = "";
-			while ((phrase = reader.readLine()) != null) {
-				string.append(phrase);
-			}
 			reader.close();
 			JSONObject json = new JSONObject(string.toString());
 			return json;
-		} catch (Exception e) {
+		}catch (Exception e) {
 			return null;
 		}
 	}
 
+public static ArrayList<States> JSONParser(JSONObject json) {
+	ArrayList<States> roster = new ArrayList<States>();
+	if (json != null) {
+		JSONArray alldata = json.optJSONArray("/countriesRoute/");
+		if (alldata != null) {
+			for (int i = 0; i < alldata.length(); i++) {
+				States Pippo = new States();
+				try {
+					Pippo.setCountry(alldata.getJSONObject(i).getString("Country"));
+				}catch (JSONException e) {
+					Pippo.setCountry("No Country Found");
+				}
+				try {
+					Pippo.setSlug(alldata.getJSONObject(i).getString("Slug"));
+				}catch (JSONException e) {
+					Pippo.setSlug("No Slug");
+				}
+				try {
+					Pippo.setISO2(alldata.getJSONObject(i).getString("ISO2"));
+				}catch (JSONException e) {
+					Pippo.setSlug("No Slug");
+				}
+				roster.add(Pippo);
+		}
+	}
+}
+	return roster;
+}	
 
 
-public static ArrayList<nation> JSONParser(JSONObject json) {
-	ArrayList<nation> list = new ArrayList<nation>();
-	
-	if(json != null) {
-		int i=0;
-		nation COCA = new nation();
-		JSONArray alldata = json.optJSONArray("data");
-		if( alldata != null) {
-			
-			for(i = 0; i < alldata.length(); i++) {
-				try {
-					COCA.setCountry(alldata.getJSONObject(i).getString("Country"));
-				}catch (JSONException e) {
-					COCA.setCountry("No Country Found");
-				}
-				try {
-					COCA.setConfirmed(alldata.getJSONObject(i).get("Confirmed"));
-				}catch (JSONException e) {
-					COCA.setConfirmed(0);
-				}
-				try {
-					COCA.setDeaths(alldata.getJSONObject(i).get("Deaths"));
-				}catch (JSONException e) {
-					COCA.setDeaths(0);
-				}
-				try {
-					COCA.setRecovered(alldata.getJSONObject(i).get("Recovered"));
-				}catch (JSONException e) {
-					COCA.setRecovered(0);
-				}
-				try {
-					COCA.setActive(alldata.getJSONObject(i).get("Active"));
-				}catch (JSONException e) {
-					COCA.setActive(0);
-				}
-				try {
-					COCA.setDate(alldata.getJSONObject(i).getString("Date"));
-				}catch (JSONException e) {
-					COCA.setDate("No Date");
-				}
-				list.add(COCA);
-			}
+public static JSONObject readURL2() {
+		try {
+		String myURL = URLservice.getURL("Slug"); //verificare questa chiamata//
+		StringBuilder line = new StringBuilder();
+		URL url = new URL(myURL);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+		String phrase = "";
+		while ((phrase = reader.readLine()) != null) {
+			line.append(phrase);
+		}
+			reader.close();
+			JSONArray alldata;
+			JSONObject json2 = new JSONObject(line.toString());
+			return json2;
+		}catch (Exception e) {
+			return null;
+		}
+	}
+
+public static ArrayList<Nation> JSONParser2(JSONObject json2) {
+ArrayList<Nation> list = new ArrayList<Nation>();
+if(json2 != null) {
+	JSONArray alldata = json2.optJSONArray("");
+	if( alldata != null) {
+		for(int i = 0; i < alldata.length(); i++) {
+			Nation COCA = new Nation();
+			json2 = (JSONObject) alldata.get(i);
+			COCA.setCountry((String) json2.getString("Country"));
+			COCA.setConfirmed((int) json2.get("Confirmed"));
+			COCA.setActive((long) json2.get("Active"));
+			COCA.setRecovered((long) json2.get("Recovered"));
+			COCA.setDeaths((long) json2.get("Deaths"));
+			COCA.setDate((String) json2.get("Date"));
+			list.add(COCA);
+		}
 			}
 		}
-	}**/
+	return list;
 	}
+}
+
+
+	

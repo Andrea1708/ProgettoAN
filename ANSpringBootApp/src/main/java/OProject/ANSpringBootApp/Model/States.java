@@ -4,7 +4,7 @@ public class States {
 		/**
 		 * recognizer of world's nation
 		 */
-		private String country;
+		private String Country;
 		/**
 		 * nome dello stato da mettere sul rest
 		 */
@@ -16,13 +16,13 @@ public class States {
 
 
 public States() {
-	country = "No country";
+	Country = "No country";
 	Slug = "No Slug";
 	ISO2 = "No ISO2";
 }
 
-public States (String country, String Slug, String ISO2) {
-this.country = country;
+public States (String Country, String Slug, String ISO2) {
+this.Country = Country;
 this.Slug = Slug;
 this.ISO2 = ISO2;
 }
@@ -30,19 +30,17 @@ this.ISO2 = ISO2;
  *Capire se va inserito qualcosa relativo al getCountries 
  */
 
-
-
 public String getCountry() {
-	return country;
+	return Country;
 }
 
 public void setCountry(String country) {
-	this.country = country;
+	Country = country;
 }
-
 public String getSlug() {
 	return Slug;
 }
+
 
 public void setSlug(String slug) {
 	Slug = slug;

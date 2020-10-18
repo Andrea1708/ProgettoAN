@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
-import OProject.ANSpringBootApp.Model.nation;
+import OProject.ANSpringBootApp.Model.Nation;
 
 public class FilterData {
 	public static ArrayList<String> getListaDateNazioni(String data, String paese) {
