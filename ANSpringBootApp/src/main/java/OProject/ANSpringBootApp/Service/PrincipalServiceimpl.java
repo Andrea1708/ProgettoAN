@@ -16,7 +16,7 @@ public class PrincipalServiceimpl implements PrincipalService {
 	
 public PrincipalServiceimpl() {
 	States stato = new States(null,null,null);
-	Nation nazione = new Nation(null,0,0,0,0,null);
+	Nation nazione = new Nation(null,null,null,null,null,0,0,0,0,0,0,null);
 }
 	
 @Override 

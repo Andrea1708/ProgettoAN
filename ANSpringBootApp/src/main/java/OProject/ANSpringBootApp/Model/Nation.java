@@ -10,6 +10,30 @@ public class Nation {
 	 */
 	private String Country;
 	/**
+	 *  recognizer of Country's Code
+	 */
+	private String CountryCode;
+	/**
+	 * recognizer Country's Province
+	 */
+	private String Province;
+	/**
+	 * recognizer Country's City
+	 */
+	private String City;
+	/**
+	 * recognizer CityCode
+	 */
+	private String CityCode;
+	/**
+	 * recognizer Country's Latitude
+	 */
+	private int Lat;
+	/**
+	 * recognizer Country's longitude
+	 */
+	private int Lon;
+	/**
 	 * total cases
 	 */
 	private int Confirmed;
@@ -36,14 +60,26 @@ public class Nation {
 	 */
 	public Nation() {
 		Country = "no country";
+		CountryCode= "no countrycode";
+		Province = "no province";
+		City = "no city";
+		CityCode = "no citycode";
+		Lat = 0;
+		Lon = 0;
 		Confirmed = 0;
 		Deaths = 0;
 		Recovered = 0;
 		Active = 0;
 		Date = "no date";
 	}
-	public Nation (String Country, int Confirmed, int Deaths, int  Recovered, int Active, String Date) {
+	public Nation (String Country, String CountryCode, String Province,String City, String CityCode, int Lat, int Lon, int Confirmed, int Deaths, int  Recovered, int Active, String Date) {
 	this.Country = Country;
+	this.CountryCode = CountryCode;
+	this.Province = Province;
+	this.City= City;
+	this.CityCode= CityCode;
+	this.Lat = Lat;
+	this.Lon = Lon;
 	this.Confirmed = Confirmed;
 	this.Deaths = Deaths;
 	this.Recovered = Recovered;
@@ -55,6 +91,42 @@ public class Nation {
 	}
 	public void setCountry(String country) {
 		Country = country;
+	}
+	public String getCountryCode() {
+		return CountryCode;
+	}
+	public void setCountryCode(String countryCode) {
+		CountryCode = countryCode;
+	}
+	public String getProvince() {
+		return Province;
+	}
+	public void setProvince(String province) {
+		Province = province;
+	}
+	public String getCity() {
+		return City;
+	}
+	public void setCity(String city) {
+		City = city;
+	}
+	public String getCityCode() {
+		return CityCode;
+	}
+	public void setCityCode(String cityCode) {
+		CityCode = cityCode;
+	}
+	public int getLat() {
+		return Lat;
+	}
+	public void setLat(int lat) {
+		Lat = lat;
+	}
+	public int getLon() {
+		return Lon;
+	}
+	public void setLon(int lon) {
+		Lon = lon;
 	}
 	public int getConfirmed() {
 		return Confirmed;
@@ -86,5 +158,7 @@ public class Nation {
 	public void setDate(String date) {
 		Date = date;
 	}
+	
+	
 }
 	
