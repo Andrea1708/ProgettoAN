@@ -1,6 +1,8 @@
 package OProject.ANSpringBootApp.Exception;
 
-public class NoCountry {
+import java.io.IOException;
+
+public class NoCountry extends IOException {
 
 		private static final long serialVersionUID = 1L; /** vedere bene cosa serve la serial vesion*/
 

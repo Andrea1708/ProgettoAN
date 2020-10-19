@@ -11,11 +11,6 @@ public class AnSpringBootAppApplication {
 
 	public static void main(String[] args) throws IOException {
 		JsonProcessing.readURL();
-		JSONObject json = new JSONObject();
-		JsonProcessing.InformationTake(json);
-		JsonProcessing.readURL2();
-		JSONObject json2 = new JSONObject();
-		JsonProcessing.JSONParser(json2);
 		SpringApplication.run(AnSpringBootAppApplication.class, args);
 		
 		

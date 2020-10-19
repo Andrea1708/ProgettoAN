@@ -1,6 +1,8 @@
 package OProject.ANSpringBootApp.Exception;
 
-public class NoDates extends ExceptionManager {
+import java.io.IOException;
+
+public class NoDates extends IOException {
 	
 	private static final long serialVesionUID = 1L;
 	

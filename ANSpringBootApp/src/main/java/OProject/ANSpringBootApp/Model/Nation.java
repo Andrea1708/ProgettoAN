@@ -8,7 +8,7 @@ public class Nation {
 	/**
 	 * recognizer of world's nation
 	 */
-	public String Country;
+	private String Country;
 	/**
 	 * total cases
 	 */
@@ -16,15 +16,15 @@ public class Nation {
 	/**
 	 *  dead citizens
 	 */
-	private long Deaths;
+	private int Deaths;
 	/**
 	 * recovered citizens
 	 */
-	private long Recovered;
+	private int Recovered;
 	/**
 	 * currently positive citizens
 	 */
-	private long Active;
+	private int Active;
 	/**
 	 * data about a chosen period
 	 */
@@ -42,7 +42,7 @@ public class Nation {
 		Active = 0;
 		Date = "no date";
 	}
-	public Nation (String Country, int Confirmed, long Deaths, long  Recovered, long Active, String Date) {
+	public Nation (String Country, int Confirmed, int Deaths, int  Recovered, int Active, String Date) {
 	this.Country = Country;
 	this.Confirmed = Confirmed;
 	this.Deaths = Deaths;
@@ -56,30 +56,28 @@ public class Nation {
 	public void setCountry(String country) {
 		Country = country;
 	}
-	
-	
 	public int getConfirmed() {
 		return Confirmed;
 	}
 	public void setConfirmed(int confirmed) {
 		Confirmed = confirmed;
 	}
-	public long getDeaths() {
+	public int getDeaths() {
 		return Deaths;
 	}
-	public void setDeaths(long deaths) {
+	public void setDeaths(int deaths) {
 		Deaths = deaths;
 	}
-	public long getRecovered() {
+	public int getRecovered() {
 		return Recovered;
 	}
-	public void setRecovered(long recovered) {
+	public void setRecovered(int recovered) {
 		Recovered = recovered;
 	}
-	public long getActive() {
+	public int getActive() {
 		return Active;
 	}
-	public void setActive(long active) {
+	public void setActive(int active) {
 		Active = active;
 	}
 	public String getDate() {
@@ -89,3 +87,4 @@ public class Nation {
 		Date = date;
 	}
 }
+	
