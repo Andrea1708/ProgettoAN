@@ -11,12 +11,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
 import OProject.ANSpringBootApp.Service.PrincipalService;
+import OProject.ANSpringBootApp.Service.URLservice;
 
 @RestController
 public class Controller {
@@ -24,7 +26,7 @@ public class Controller {
 	@Autowired
 	PrincipalService PrincipalService;
 	/**
-	 * management of the route "/Countries" that return the dataset
+	 * management of the route "/countries" that return the dataset
 	 * @Param Country nome del paese
 	 * @Param Slug    nome da inserire nel rest 
 	 * @Param ISO2    codice di ogni paese
@@ -36,10 +38,10 @@ public ResponseEntity<Object> getAllCountries() throws IOException
 		return new ResponseEntity<>(PrincipalService.totalCountries(),HttpStatus.OK);
 }
 	
-	/**@RequestMapping(value="/live/Countries", method = RequestMethod.GET)
-	public ResponseEntity<Object> getDataCountries() throws JSONException 
-{
-		
-		
-}**/
+	
+	/**@RequestMapping(value = "/live/country/{Slug}",  method = RequestMethod.GET)
+public ResponseEntity<Object> DatesCountries(@RequestParam(name ="Slug",defaultValue = "No Slug") String Slug) throws Exception  
+	{
+		return new ResponseEntity<>(PrincipalService.TakeDataCountries(),HttpStatus.OK);
+	}**/
 }

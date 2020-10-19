@@ -1,7 +1,9 @@
 package OProject.ANSpringBootApp.Service;
 
 import java.io.IOException;
+import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -20,9 +22,9 @@ public PrincipalServiceimpl() {
 }
 	
 @Override 
-public String totalCountries() throws IOException {
-	if(JsonProcessing.readURL().isEmpty()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"There are not country... ");
-		return JsonProcessing.readURL();
+public JSONObject totalCountries() throws IOException {
+	if(JsonProcessing.readrUrl3().isEmpty()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"There are not country here... ");
+		return JsonProcessing.readrUrl3();
 }
-}	
-
+	
+}
