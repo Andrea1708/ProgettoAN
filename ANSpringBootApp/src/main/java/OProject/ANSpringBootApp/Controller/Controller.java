@@ -32,10 +32,14 @@ public class Controller {
 	 * @Param ISO2    codice di ogni paese
 	 */
 	@RequestMapping(value="/countries", method = RequestMethod.GET)
-public ResponseEntity<Object> getAllCountries() throws IOException 
+public ArrayList<States> getAllCountries() throws IOException 
 {
+		ArrayList<States> Nomi = new ArrayList<States>();
+		JsonProcessing.Parsing(JsonProcessing.readURL(),Nomi);
+		return Nomi;
 		
-		return new ResponseEntity<>(PrincipalService.totalCountries(),HttpStatus.OK);
+		
+}
 }
 	
 	
@@ -43,5 +47,5 @@ public ResponseEntity<Object> getAllCountries() throws IOException
 public ResponseEntity<Object> DatesCountries(@RequestParam(name ="Slug",defaultValue = "No Slug") String Slug) throws Exception  
 	{
 		return new ResponseEntity<>(PrincipalService.TakeDataCountries(),HttpStatus.OK);
-	}**/
-}
+	}*
+}**/

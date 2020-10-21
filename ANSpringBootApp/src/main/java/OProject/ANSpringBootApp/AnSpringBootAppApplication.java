@@ -10,8 +10,7 @@ import java.io.IOException;
 public class AnSpringBootAppApplication {
 
 	public static void main(String[] args) throws IOException {
-		JsonProcessing.readrUrl3();
-		//JsonProcessing.readURL2();
+		JsonProcessing.readURL();
 		SpringApplication.run(AnSpringBootAppApplication.class, args);
 		
 		
