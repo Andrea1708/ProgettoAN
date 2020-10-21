@@ -9,6 +9,7 @@ public class URLservice {
 	public static String getURL(String Slug ) {
 		
 		String IndexData ="https://api.covid19api.com/live/country/"+ Slug;
-		return  IndexData;
+		
+		return IndexData;
 		}
 }

@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,12 +41,23 @@ public ArrayList<States> getAllCountries() throws IOException
 		
 		
 }
-}
+
 	
 	
-	/**@RequestMapping(value = "/live/country/{Slug}",  method = RequestMethod.GET)
-public ResponseEntity<Object> DatesCountries(@RequestParam(name ="Slug",defaultValue = "No Slug") String Slug) throws Exception  
+/**	@RequestMapping(value = "/live/country/{Slug}",  method = RequestMethod.POST)
+public ArrayList<Nation> DatesCountries(@PathVariable("Slug") String Slug) throws Exception  
 	{
-		return new ResponseEntity<>(PrincipalService.TakeDataCountries(),HttpStatus.OK);
-	}*
-}**/
+		
+		ArrayList<Nation> Cane = new ArrayList<Nation>();
+		JsonProcessing.Parsing2(JsonProcessing.readURL2(),Cane);
+		return Cane;
+	}**/
+}
+
+
+
+
+
+
+
+

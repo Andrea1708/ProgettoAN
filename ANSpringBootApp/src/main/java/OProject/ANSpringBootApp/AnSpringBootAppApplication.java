@@ -11,6 +11,7 @@ public class AnSpringBootAppApplication {
 
 	public static void main(String[] args) throws IOException {
 		JsonProcessing.readURL();
+		JsonProcessing.SlugTake(JsonProcessing.readURL());
 		SpringApplication.run(AnSpringBootAppApplication.class, args);
 		
 		
