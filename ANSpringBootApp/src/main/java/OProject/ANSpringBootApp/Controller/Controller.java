@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import OProject.ANSpringBootApp.JSON.InformationCheck;
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
@@ -43,18 +44,12 @@ public ArrayList<States> getAllCountries() throws IOException
 }
 
 	
-	
-/**	@RequestMapping(value = "/live/country/{Slug}",  method = RequestMethod.POST)
+	@RequestMapping(value = "/live/country/{Slug}",  method = RequestMethod.POST)
 public ArrayList<Nation> DatesCountries(@PathVariable("Slug") String Slug) throws Exception  
 	{
-		
-		ArrayList<Nation> Cane = new ArrayList<Nation>();
-		JsonProcessing.Parsing2(JsonProcessing.readURL2(),Cane);
-		return Cane;
-	}**/
+		return InformationCheck.DataCheck(Slug);
+	}
 }
-
-
 
 
 

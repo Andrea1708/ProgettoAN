@@ -33,8 +33,6 @@ public static JSONArray readURL() throws JSONException {
 		sc.close();
 		JSONArray jsonArr = new JSONArray(inline);
 		conn.disconnect();
-		// stampa array con dentro la stringa
-		System.out.println(jsonArr);
 		// return dell'array
 		return jsonArr;
 		}catch(Exception e) {
@@ -72,14 +70,15 @@ public static ArrayList<String> SlugTake(JSONArray jsonArr){
 			}
 		}
 	}
-	 return roster;
+	System.out.println(roster);
+	return roster;
 }
 
 
-/**public static JSONArray readURL2() throws JSONException {
+public static JSONArray readURL2() throws JSONException {
 	String inline = "";
 	try {
-		String myURL = URLservice.getURL;
+		String myURL = URLservice.getURL();
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
@@ -123,7 +122,7 @@ public static void Parsing2 (JSONArray jsonArr, ArrayList<Nation> list){
 			objval.setRecovered((int)json.getInt("Recovered"));
 			objval.setDate((String)json.get("Date"));
 		}
-	}**/
+	}
 }	
 
 
