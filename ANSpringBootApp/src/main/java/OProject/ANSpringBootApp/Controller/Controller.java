@@ -44,15 +44,12 @@ public ArrayList<States> getAllCountries() throws IOException
 }
 
 	
-	@RequestMapping(value = "/live/country/{Slug}",  method = RequestMethod.POST)
-public ArrayList<Nation> DatesCountries(@PathVariable("Slug") String Slug) throws Exception  
+	@RequestMapping(value = "/live/{Slug}",  method = RequestMethod.POST)
+public ArrayList<Nation> DatesCountry(@PathVariable("Slug") String Slug) throws Exception  
 	{
 		return InformationCheck.DataCheck(Slug);
 	}
 }
-
-
-
 
 
 

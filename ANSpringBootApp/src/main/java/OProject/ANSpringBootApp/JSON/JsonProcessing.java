@@ -75,10 +75,10 @@ public static ArrayList<String> SlugTake(JSONArray jsonArr){
 }
 
 
-public static JSONArray readURL2() throws JSONException {
+public static JSONArray readURL2(String Name) throws JSONException {
 	String inline = "";
 	try {
-		String myURL = URLservice.getURL(SLUG);
+		String myURL = URLservice.getURL(Name);
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
@@ -88,12 +88,12 @@ public static JSONArray readURL2() throws JSONException {
 			inline+=sc.nextLine();
 		}
 		sc.close();
-		JSONArray jsonArr = new JSONArray(inline);
+		JSONArray jsonArr2  = new JSONArray(inline);
 		conn.disconnect();
 		// stampa array con dentro la stringa
-		System.out.println(jsonArr);
+		System.out.println(jsonArr2);
 		// return dell'array
-		return jsonArr;
+		return jsonArr2;
 		}catch(Exception e) {
 		}
 		return null;
@@ -102,13 +102,13 @@ public static JSONArray readURL2() throws JSONException {
 
 		
 		
-public static void Parsing2 (JSONArray jsonArr, ArrayList<Nation> list){				
+public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
 		
-		for(int i=0; i < jsonArr.length();i++) 
+		for(int i=0; i < jsonArr2.length();i++) 
 		{
 			Nation objval = new Nation();
 			JSONObject json;
-			json= (JSONObject) jsonArr.get(i);
+			json= (JSONObject) jsonArr2.get(i);
 			objval.setCountry((String)json.get("Country"));
 			objval.setCountryCode((String)json.get("CountryCode"));
 			objval.setCity((String)json.get("City"));
@@ -121,6 +121,7 @@ public static void Parsing2 (JSONArray jsonArr, ArrayList<Nation> list){
 			objval.setConfirmed((int)json.get("Confirmed"));
 			objval.setRecovered((int)json.getInt("Recovered"));
 			objval.setDate((String)json.get("Date"));
+			list.add(objval);
 		}
 	}
 }	
