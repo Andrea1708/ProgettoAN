@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
 import OProject.ANSpringBootApp.Service.PrincipalService;
+import OProject.ANSpringBootApp.Service.URLservice;
 
 
 @RestController
@@ -44,9 +46,10 @@ public ArrayList<States> getAllCountries() throws IOException
 }
 
 	
-	@RequestMapping(value = "/live/{Slug}",  method = RequestMethod.POST)
-public ArrayList<Nation> DatesCountry(@PathVariable("Slug") String Slug) throws Exception  
+	@RequestMapping(value = "/pippo",  method = RequestMethod.POST)
+public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) throws Exception  
 	{
+
 		return InformationCheck.DataCheck(Slug);
 	}
 }

@@ -79,6 +79,7 @@ public static JSONArray readURL2(String Name) throws JSONException {
 	String inline = "";
 	try {
 		String myURL = URLservice.getURL(Name);
+		System.out.println(myURL);
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
