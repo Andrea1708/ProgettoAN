@@ -1,12 +1,9 @@
 package OProject.ANSpringBootApp.JSON;
 
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -105,24 +102,21 @@ public static JSONArray readURL2(String Name) throws JSONException {
 		
 public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
 		
-		for(int i=0; i < jsonArr2.length();i++) 
+		for(int i=0; i < jsonArr2.length(); i++) 
 		{
-			Nation objval = new Nation();
+			Nation objnum = new Nation();
 			JSONObject json;
 			json= (JSONObject) jsonArr2.get(i);
-			objval.setCountry((String)json.get("Country"));
-			objval.setCountryCode((String)json.get("CountryCode"));
-			objval.setCity((String)json.get("City"));
-			objval.setProvince((String)json.getString("Province"));
-			objval.setCityCode((String)json.get("CityCode"));
-			objval.setLat((int)json.get("Lat"));
-			objval.setLon((int)json.get("Lon"));
-			objval.setActive((int)json.get("Active"));
-			objval.setDeaths((int)json.get("Deaths"));
-			objval.setConfirmed((int)json.get("Confirmed"));
-			objval.setRecovered((int)json.getInt("Recovered"));
-			objval.setDate((String)json.get("Date"));
-			list.add(objval);
+			objnum.setCountry((String)json.get("Country"));
+			objnum.setCountryCode((String)json.get("CountryCode"));
+			objnum.setLat((String)json.get("Lat"));
+			objnum.setLon((String)json.get("Lon"));
+			objnum.setActive((Integer)json.get("Active"));
+			objnum.setDeaths((Integer)json.get("Deaths"));
+			objnum.setConfirmed((Integer)json.get("Confirmed"));
+			objnum.setRecovered((Integer)json.get("Recovered"));
+			objnum.setDate((String)json.get("Date"));
+			list.add(objnum);
 		}
 	}
 }	

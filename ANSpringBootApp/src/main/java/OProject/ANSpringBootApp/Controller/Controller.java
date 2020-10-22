@@ -20,15 +20,13 @@ import OProject.ANSpringBootApp.JSON.InformationCheck;
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
-import OProject.ANSpringBootApp.Service.PrincipalService;
+
 import OProject.ANSpringBootApp.Service.URLservice;
 
 
 @RestController
 public class Controller {
 	
-	@Autowired
-	PrincipalService PrincipalService;
 	/**
 	 * management of the route "/countries" that return the dataset
 	 * @Param Country nome del paese
@@ -49,8 +47,10 @@ public ArrayList<States> getAllCountries() throws IOException
 	@RequestMapping(value = "/pippo",  method = RequestMethod.POST)
 public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) throws Exception  
 	{	
-		if(InformationCheck.SlugCheck(Slug, JsonProcessing.SlugTake(JsonProcessing.readURL())))
-		return InformationCheck.DataCheck(Slug);
+		if(InformationCheck.SlugCheck(Slug, JsonProcessing.SlugTake(JsonProcessing.readURL())) == true);
+		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
+		JsonProcessing.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
+		return PaeseSelezionato;
 	}
 }
 

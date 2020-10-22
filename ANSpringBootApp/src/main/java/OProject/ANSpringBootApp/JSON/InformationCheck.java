@@ -9,9 +9,9 @@ package OProject.ANSpringBootApp.JSON;
 	public class InformationCheck {
 
 public static boolean SlugCheck(String Line, ArrayList<String> roster) {
-
+			roster = JsonProcessing.SlugTake(JsonProcessing.readURL());
 			for (int i = 0; i < roster.size(); i++) {
-				if (Line == roster.get(i)) {
+				if (Line.equals(roster.get(i))) {
 					System.out.println("Il Paese selezionato esiste");
 					return true;
 				}
@@ -20,17 +20,6 @@ public static boolean SlugCheck(String Line, ArrayList<String> roster) {
 			return false;
 
 		}
-		
-		
-		
-	public static ArrayList<Nation> DataCheck(String Slug) {
-		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
-		URLservice.getURL(Slug);
-		JsonProcessing.readURL2(Slug);
-		JsonProcessing.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
-		System.out.println(PaeseSelezionato);
-		return PaeseSelezionato;
-		} 
 	}
 
 

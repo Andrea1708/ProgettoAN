@@ -14,41 +14,29 @@ public class Nation {
 	 */
 	private String CountryCode;
 	/**
-	 * recognizer Country's Province
-	 */
-	private String Province;
-	/**
-	 * recognizer Country's City
-	 */
-	private String City;
-	/**
-	 * recognizer CityCode
-	 */
-	private String CityCode;
-	/**
 	 * recognizer Country's Latitude
 	 */
-	private int Lat;
+	private String Lat;
 	/**
 	 * recognizer Country's longitude
 	 */
-	private int Lon;
+	private String Lon;
 	/**
 	 * total cases
 	 */
-	private int Confirmed;
+	private Integer Confirmed;
 	/**
 	 *  dead citizens
 	 */
-	private int Deaths;
+	private Integer Deaths;
 	/**
 	 * recovered citizens
 	 */
-	private int Recovered;
+	private Integer Recovered;
 	/**
 	 * currently positive citizens
 	 */
-	private int Active;
+	private Integer Active;
 	/**
 	 * data about a chosen period
 	 */
@@ -61,23 +49,18 @@ public class Nation {
 	public Nation() {
 		Country = "no country";
 		CountryCode= "no countrycode";
-		Province = "no province";
-		City = "no city";
-		CityCode = "no citycode";
-		Lat = 0;
-		Lon = 0;
+		Lat = "No lat";
+		Lon = "No lon";
 		Confirmed = 0;
 		Deaths = 0;
 		Recovered = 0;
 		Active = 0;
 		Date = "no date";
+		
 	}
-	public Nation (String Country, String CountryCode, String Province,String City, String CityCode, int Lat, int Lon, int Confirmed, int Deaths, int  Recovered, int Active, String Date) {
+	public Nation (String Country, String CountryCode, String Lat, String Lon, Integer Confirmed, Integer Deaths, Integer  Recovered, Integer Active, String Date) {
 	this.Country = Country;
 	this.CountryCode = CountryCode;
-	this.Province = Province;
-	this.City= City;
-	this.CityCode= CityCode;
 	this.Lat = Lat;
 	this.Lon = Lon;
 	this.Confirmed = Confirmed;
@@ -85,6 +68,7 @@ public class Nation {
 	this.Recovered = Recovered;
 	this.Active = Active;
 	this.Date = Date;
+	
 	}
 	public String getCountry() {
 		return Country;
@@ -98,58 +82,40 @@ public class Nation {
 	public void setCountryCode(String countryCode) {
 		CountryCode = countryCode;
 	}
-	public String getProvince() {
-		return Province;
-	}
-	public void setProvince(String province) {
-		Province = province;
-	}
-	public String getCity() {
-		return City;
-	}
-	public void setCity(String city) {
-		City = city;
-	}
-	public String getCityCode() {
-		return CityCode;
-	}
-	public void setCityCode(String cityCode) {
-		CityCode = cityCode;
-	}
-	public int getLat() {
+	public String getLat() {
 		return Lat;
 	}
-	public void setLat(int lat) {
+	public void setLat(String lat) {
 		Lat = lat;
 	}
-	public int getLon() {
+	public String getLon() {
 		return Lon;
 	}
-	public void setLon(int lon) {
+	public void setLon(String lon) {
 		Lon = lon;
 	}
-	public int getConfirmed() {
+	public Integer getConfirmed() {
 		return Confirmed;
 	}
-	public void setConfirmed(int confirmed) {
+	public void setConfirmed(Integer confirmed) {
 		Confirmed = confirmed;
 	}
-	public int getDeaths() {
+	public Integer getDeaths() {
 		return Deaths;
 	}
-	public void setDeaths(int deaths) {
+	public void setDeaths(Integer deaths) {
 		Deaths = deaths;
 	}
-	public int getRecovered() {
+	public Integer getRecovered() {
 		return Recovered;
 	}
-	public void setRecovered(int recovered) {
+	public void setRecovered(Integer recovered) {
 		Recovered = recovered;
 	}
-	public int getActive() {
+	public Integer getActive() {
 		return Active;
 	}
-	public void setActive(int active) {
+	public void setActive(Integer active) {
 		Active = active;
 	}
 	public String getDate() {
@@ -158,7 +124,5 @@ public class Nation {
 	public void setDate(String date) {
 		Date = date;
 	}
-	
-	
 }
 	
