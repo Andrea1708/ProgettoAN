@@ -48,8 +48,8 @@ public ArrayList<States> getAllCountries() throws IOException
 	
 	@RequestMapping(value = "/pippo",  method = RequestMethod.POST)
 public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) throws Exception  
-	{
-
+	{	
+		if(InformationCheck.SlugCheck(Slug, JsonProcessing.SlugTake(JsonProcessing.readURL())))
 		return InformationCheck.DataCheck(Slug);
 	}
 }

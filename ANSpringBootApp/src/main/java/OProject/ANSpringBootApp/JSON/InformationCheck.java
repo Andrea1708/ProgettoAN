@@ -25,14 +25,11 @@ public static boolean SlugCheck(String Line, ArrayList<String> roster) {
 		
 	public static ArrayList<Nation> DataCheck(String Slug) {
 		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
-		ArrayList<String> list = new ArrayList<String>();
-		list = JsonProcessing.SlugTake(JsonProcessing.readURL());
 		URLservice.getURL(Slug);
 		JsonProcessing.readURL2(Slug);
-		if(InformationCheck.SlugCheck(Slug, list))
-			JsonProcessing.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
-			System.out.println(PaeseSelezionato);
-			return PaeseSelezionato;
+		JsonProcessing.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
+		System.out.println(PaeseSelezionato);
+		return PaeseSelezionato;
 		} 
 	}
 
