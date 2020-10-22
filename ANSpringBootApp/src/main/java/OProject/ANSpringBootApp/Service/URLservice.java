@@ -6,9 +6,9 @@ public class URLservice {
 	/**
 	 * Method that modifies the URL by adding the name of the chosen country
 	 */
-	public static String getURL(String Slug ) {
+	public static String getURL(String Word ) {
 		
-		String IndexData ="https://api.covid19api.com/live/country/"+ Slug;
+		String IndexData ="https://api.covid19api.com/live/country/"+ Word;
 		
 		return IndexData;
 		}

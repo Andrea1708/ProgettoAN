@@ -78,7 +78,7 @@ public static ArrayList<String> SlugTake(JSONArray jsonArr){
 public static JSONArray readURL2() throws JSONException {
 	String inline = "";
 	try {
-		String myURL = URLservice.getURL();
+		String myURL = URLservice.getURL(SLUG);
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
