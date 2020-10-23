@@ -44,7 +44,7 @@ public ArrayList<States> getAllCountries() throws IOException
 }
 
 	
-	@RequestMapping(value = "/pippo",  method = RequestMethod.POST)
+	@RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) throws Exception  
 	{	
 		if(InformationCheck.SlugCheck(Slug, JsonProcessing.SlugTake(JsonProcessing.readURL())) == true);
@@ -54,7 +54,7 @@ public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) th
 	}
 	
 	
-@RequestMapping(value = "/pippo/coca",  method = RequestMethod.POST)
+@RequestMapping(value = "/values",  method = RequestMethod.POST)
 	public ArrayList<Nation> InfoCountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From) throws Exception  
 		{
 	ArrayList<String> roster = new ArrayList<String>();
