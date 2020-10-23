@@ -25,6 +25,13 @@ L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte d
 
 ![Diagramma delle Classi Package](https://user-images.githubusercontent.com/72570036/97029644-03cfef00-155e-11eb-995e-210779fc5580.png)
 
+## SOFTWARE UTILIZZATI
+
+Eclipse - ambiente di sviluppo integrato
+Spring Boot - framework per sviluppo applicazioni Java
+Maven - strumento di gestione di progetti
+Postman - piattaforma per lo sviluppo API
+UML Designer - strumento di modellazione grafica
 
 ## NOTE 
 
