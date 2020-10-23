@@ -83,15 +83,15 @@ Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
 
 #### getcountries
 
-![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97055624-7bfeda80-1587-11eb-9704-fead3440fdf3.png)
+![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97055954-1f4fef80-1588-11eb-882d-391765220545.png)
 
 #### getlivecountryslug
 
-![Diagramma in Sequenza Chiamata2 (1)](https://user-images.githubusercontent.com/72570036/97055630-7f926180-1587-11eb-80b0-6cc353057d9f.png)
+![Diagramma in Sequenza Chiamata2 (1)](https://user-images.githubusercontent.com/72570036/97055950-1eb75900-1588-11eb-9688-4364c830f52f.png)
 
 #### getlivecountrydate
 
-![Diagramma in Sequenza Chiamata3 (1)](https://user-images.githubusercontent.com/72570036/97055631-815c2500-1587-11eb-88a4-70140d47a445.png)
+![Diagramma in Sequenza Chiamata3 (1)](https://user-images.githubusercontent.com/72570036/97055951-1f4fef80-1588-11eb-8580-2a79d13ad6d9.png)
 
 ## SOFTWARE UTILIZZATI
 
