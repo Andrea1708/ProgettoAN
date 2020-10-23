@@ -49,7 +49,8 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
 
 
-![Diagramma delle Classi Packages](https://user-images.githubusercontent.com/72570036/97038665-72677980-156b-11eb-827c-fdd13dd41b51.png)
+![Diagramma delle Classi Packages (1)](https://user-images.githubusercontent.com/72570036/97051376-5bcb1d80-157f-11eb-9cd2-c9ca34e52b4b.png)
+
 
 
 #### package OProject.ANSpringBootApp;
