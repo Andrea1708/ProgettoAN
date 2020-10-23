@@ -7,7 +7,7 @@ public class NoCountry extends IOException {
 		private static final long serialVersionUID = 1L; /** vedere bene cosa serve la serial vesion*/
 
 		/**
-		 * Ottiene il messaggio da stampare.
+		 * get the exception message.
 		 *
 		 * @return String
 		 */
