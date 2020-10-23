@@ -42,6 +42,8 @@ package OProject.ANSpringBootApp.Controller;
 
 package OProject.ANSpringBootApp.Model;
 
+![Diagramma delle Classi Model](https://user-images.githubusercontent.com/72570036/97033031-fcf7ab00-1562-11eb-81f9-28f5edb93847.png)
+
 package OProject.ANSpringBootApp.Service;
 
 ![Diagramma delle Classi Service](https://user-images.githubusercontent.com/72570036/97033041-fff29b80-1562-11eb-9bb6-8705cb2dfa80.png)
