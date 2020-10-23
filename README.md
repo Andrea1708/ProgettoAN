@@ -1,4 +1,4 @@
-## ProgettoAN
+#### ProgettoAN
 
 ## PRESENTAZIONE
 
@@ -16,11 +16,13 @@ Dopo aver avviato l'applicazione, sarà possibile interrogarla attraverso un API
 L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte distinte:
 
 
+
 ROTTA  | TIPO | DESCRIZIONE
 ------------- | ------------- | --------------
 \countries | GET  | restituisce i dati riconoscitivi delle nazioni
 \live\country | GET | restituisce i dati relativi al covid 19 per ogni nazione
 \live\country\slug | POST | restituisce i dati di una sola nazione
+
 
 
 - /COUNTRIES: nome di tutte le nazioni, relativo "slug", e codice ISO2.
