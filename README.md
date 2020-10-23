@@ -7,8 +7,8 @@ Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, at
 
 ## DESCRIZIONE DEL FUNZIONAMENTO
 
+![Diagramma Casi d'Uso](https://user-images.githubusercontent.com/72570036/97039208-5912fd00-156c-11eb-803f-86efd2c904ae.png)
 
-![Diagramma Casi d'Uso](https://user-images.githubusercontent.com/72570036/97028990-17c72100-155d-11eb-8e78-2fbc0315bc77.png)
 
 
 
