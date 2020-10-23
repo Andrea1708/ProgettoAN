@@ -44,6 +44,8 @@ package OProject.ANSpringBootApp.Model;
 
 package OProject.ANSpringBootApp.Service;
 
+![Diagramma delle Classi Service](https://user-images.githubusercontent.com/72570036/97033041-fff29b80-1562-11eb-9bb6-8705cb2dfa80.png)
+
 # SOFTWARE UTILIZZATI
 
 Eclipse - ambiente di sviluppo integrato
