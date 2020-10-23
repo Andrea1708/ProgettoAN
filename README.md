@@ -36,9 +36,9 @@ FILTRI
 
 - metadata di un paese selezionato contenenti i dati sopracitati riferiti ad una specifica nazione richiesta dall'utente.
 
-Grazie al metodo readurl( ) otteniamo degli oggetti JSON di tipo states, da qui il metodo SlugTake( ) preleva tali attributi e li inserisce all'interno di un arraylist di stringhe.
-Entra ora in gioco il metodo SlugCheck( ) che ha la funzione di andare a confrontare la stringa inserita su Postman dall'utente con tutti gli slug dei paesi contenuti nell'arraylist; SlugCheck( ) è un metodo di tipo booleano che restituirà "false" (con relativo messaggio d'errore, gestito dalle Exception) in caso di slug non trovato, o "true" in caso positivo, in questa fase viene attivato il metodo Parsing2( ) il quale trasformerà in formato JSON ciò che è stato letto dal metodo readURL2( ).
-Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metodo getURL( ), il quale permette di modificare l'URL predefinita aggiungendo lo slug inserito dall'utente accedendo quindi ai dati di una nazione specifica
+Grazie al metodo **readurl( )** otteniamo degli oggetti JSON di tipo states, da qui il metodo **SlugTake( )** preleva tali attributi e li inserisce all'interno di un arraylist di stringhe.
+Entra ora in gioco il metodo **SlugCheck( )** che ha la funzione di andare a confrontare la stringa inserita su Postman dall'utente con tutti gli slug dei paesi contenuti nell'arraylist; **SlugCheck( )** è un metodo di tipo booleano che restituirà "false" (con relativo messaggio d'errore, gestito dalle Exception) in caso di slug non trovato, o "true" in caso positivo, in questa fase viene attivato il metodo **Parsing2( )** il quale trasformerà in formato JSON ciò che è stato letto dal metodo **readURL2( )**.
+Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metodo **getURL( )**, il quale permette di modificare l'URL predefinita aggiungendo lo slug inserito dall'utente accedendo quindi ai dati di una nazione specifica
 
 
 
