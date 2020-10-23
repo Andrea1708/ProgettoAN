@@ -15,11 +15,13 @@ Il sistema di ricerca si serve dell'API reference per effettuare il download del
 Dopo aver avviato l'applicazione, sarà possibile interrogarla attraverso un API testing, ad esempio POSTMAN, all'indirizzo http://localhost:8080.
 L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte distinte:
 
+
 ROTTA  | TIPO | DESCRIZIONE
 ------------- | ------------- | --------------
 \countries | GET  | restituisce i dati riconoscitivi delle nazioni
 \live\country | GET | restituisce i dati relativi al covid 19 per ogni nazione
 \live\country\slug | POST | restituisce i dati di una sola nazione
+
 
 - /COUNTRIES: nome di tutte le nazioni, relativo "slug", e codice ISO2.
 
