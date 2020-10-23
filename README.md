@@ -10,9 +10,9 @@ Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, at
 ![Diagramma Casi d'Uso](https://user-images.githubusercontent.com/72570036/97028990-17c72100-155d-11eb-8e78-2fbc0315bc77.png)
 
 
-Dopo aver avviato l'applicazione, sarà possibile interrogarla attraverso un API testing, ad esempio POSTMAN, all'indirizzo http://localhost:8080.
 
 Il sistema di ricerca si serve dell'API reference per effettuare il download dell'intero dataset riguardante le specifiche di ogni paese e i relativi dati, effettua successivamente il parsing dei valori ottenuti modellando gli stessi in formato JSON.
+Dopo aver avviato l'applicazione, sarà possibile interrogarla attraverso un API testing, ad esempio POSTMAN, all'indirizzo http://localhost:8080.
 L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte distinte:
 
 - /COUNTRIES: nome di tutte le nazioni, relativo "slug", e codice ISO2.
