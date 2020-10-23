@@ -26,9 +26,7 @@ this.Country = Country;
 this.Slug = Slug;
 this.ISO2 = ISO2;
 }
-/**
- *Capire se va inserito qualcosa relativo al getCountries 
- */
+
 
 public String getCountry() {
 	return Country;
