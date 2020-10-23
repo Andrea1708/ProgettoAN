@@ -30,9 +30,7 @@ ROTTA  | TIPO | DESCRIZIONE
 
 - /LIVE/COUNTRY/SLUG: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente i dati sopracitati.
 
-FILTRI
-
-
+####FILTRI
 
 - metadata di un paese selezionato contenente i dati sopracitati riferiti ad una specifica nazione richiesta dall'utente.
 
@@ -42,7 +40,7 @@ Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metod
 
 - metadata di un paese selezionato contenente i dati sopracitati a partire da una specifica data richiesta dall'utente.
 
-Il metodo GetURL2( ) come nel caso precedente, va a modificare l'URL predefinita aggiungendo nome della nazione e data scelta, inseriti anche questa volta dall'utente, rendendo cosi tale URL leggibile dal metodo ReadURL3( ), il quale richiamerà il metodo Parsing3( ); esso svolge il compito di restituire un arraylist contenente i dati relativi al virus Covid-19 dalla data selezionata in poi, della nazione specificata.
+Il metodo **GetURL2( )** come nel caso precedente, va a modificare l'URL predefinita aggiungendo nome della nazione e data scelta, inseriti anche questa volta dall'utente, rendendo cosi tale URL leggibile dal metodo **ReadURL3( )**, il quale richiamerà il metodo **Parsing3( )**; esso svolge il compito di restituire un arraylist contenente i dati relativi al virus Covid-19 dalla data selezionata in poi, della nazione specificata.
 Durante tale processo avviene una verifica sull'inserimento della nazione, nel caso non fosse una nazione esistente nel database, verrà mostrato  un messaggio di errore personalizzato, sempre gestio dalla classe Exception
 
 
