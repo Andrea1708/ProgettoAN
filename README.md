@@ -38,6 +38,12 @@ FILTRI
 
 ![Diagramma delle Classi Package](https://user-images.githubusercontent.com/72570036/97029644-03cfef00-155e-11eb-995e-210779fc5580.png)
 
+package OProject.ANSpringBootApp.Controller;
+
+package OProject.ANSpringBootApp.Model;
+
+package OProject.ANSpringBootApp.Service;
+
 # SOFTWARE UTILIZZATI
 
 Eclipse - ambiente di sviluppo integrato
