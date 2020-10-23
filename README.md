@@ -32,4 +32,4 @@ Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, i
 
 "Ingegneria Informatica e dell'Automazione" - Università Politecnica delle Marche
 
-Programmazione ad Oggetti A.A.2019/2020
+Programmazione ad Oggetti A.A.2019/2020 - autori: Andrea Belleggia, Nicola Marziali
