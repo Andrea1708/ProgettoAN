@@ -4,6 +4,7 @@
 
 Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, attraverso un sistema di ricerca per paesi, permetta all'utente di consultare dati relativi all'andamento del virus Covid-19 nel mondo e nei vari paesi specifici. 
 
+
 # DESCRIZIONE DEL FUNZIONAMENTO
 
 
@@ -34,6 +35,8 @@ FILTRI
 
 - metadata di un paese selezionato contenenti i dati sopracitati riferiti ad una specifica data richiesta dall'utente.
 
+
+
 # DIAGRAMMA DELLE CLASSI & PACKAGES
 
 ![Diagramma delle Classi Package](https://user-images.githubusercontent.com/72570036/97029644-03cfef00-155e-11eb-995e-210779fc5580.png)
@@ -48,6 +51,8 @@ package OProject.ANSpringBootApp.Service;
 
 ![Diagramma delle Classi Service](https://user-images.githubusercontent.com/72570036/97033041-fff29b80-1562-11eb-9bb6-8705cb2dfa80.png)
 
+
+
 # SOFTWARE UTILIZZATI
 
 Eclipse - ambiente di sviluppo integrato
@@ -59,6 +64,7 @@ Maven - strumento di gestione di progetti
 Postman - piattaforma per lo sviluppo API
 
 UML Designer - strumento di modellazione grafica
+
 
 
 # NOTE 
