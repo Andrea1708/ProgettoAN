@@ -1,10 +1,10 @@
-# ProgettoAN
+## ProgettoAN
 
-PRESENTAZIONE
+## PRESENTAZIONE
 
 Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, attraverso un sistema di ricerca per paesi, permetta all'utente di consultare dati relativi all'andamento del virus Covid-19 nel mondo e nei vari paesi specifici. 
 
-DESCRIZIONE DEL FUNZIONAMENTO
+## DESCRIZIONE DEL FUNZIONAMENTO
 
 
 Il sistema di ricerca si serve dell'API reference per effettuare il download dell'intero dataset riguardante le specifiche di ogni paese e i relativi dati, effettua successivamente il parsing dei valori ottenuti modellando gli stessi in formato JSON.
@@ -16,7 +16,7 @@ L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte d
 
 -metadata di un paese selezionato contenenti i dati sopracitati riferiti ad una specifica data richiesta dall'utente.
 
-NOTE 
+## NOTE 
 
 Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obittivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
 
