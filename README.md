@@ -30,7 +30,7 @@ ROTTA  | TIPO | DESCRIZIONE
 
 - /LIVE/COUNTRY/SLUG: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente i dati sopracitati.
 
-####FILTRI
+#### FILTRI
 
 - metadata di un paese selezionato contenente i dati sopracitati riferiti ad una specifica nazione richiesta dall'utente.
 
