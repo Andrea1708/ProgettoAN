@@ -54,7 +54,7 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 #### package OProject.ANSpringBootApp;
 
-![Diagramma delle Classi Util](https://user-images.githubusercontent.com/72570036/97040206-ec006700-156d-11eb-8b20-0b14d9f6a81c.png)
+![Diagramma delle Classi Util (1)](https://user-images.githubusercontent.com/72570036/97051084-d6e00400-157e-11eb-961d-c12e40f5aad9.png)
 
 #### package OProject.ANSpringBootApp.Controller;
 
@@ -74,7 +74,7 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 #### package OProject.ANSpringBootApp.JSON;
 
-![Diagramma delle Classi JSON](https://user-images.githubusercontent.com/72570036/97039796-46e58e80-156d-11eb-8bf5-67c4690697f6.png)
+![Diagramma delle Classi JSON (2)](https://user-images.githubusercontent.com/72570036/97051063-cb8cd880-157e-11eb-85e9-28537885cf31.png)
 
 
 
