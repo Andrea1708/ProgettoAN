@@ -77,6 +77,19 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 ![Diagramma delle Classi JSON (2)](https://user-images.githubusercontent.com/72570036/97051063-cb8cd880-157e-11eb-85e9-28537885cf31.png)
 
+## DIAGRAMMA DELLE SEQUENZE
+
+Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
+
+### GETCOUNTRIES
+
+![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97054627-6983a180-1585-11eb-8954-0df3fc23b3f5.png)
+
+### GETLIVECOUNTRY
+
+![Diagramma in Sequenza Chiamata2](https://user-images.githubusercontent.com/72570036/97054787-c54e2a80-1585-11eb-82d7-6a145370857c.png)
+
+### GETLIVECOUNTRYSLUG
 
 
 ## SOFTWARE UTILIZZATI
