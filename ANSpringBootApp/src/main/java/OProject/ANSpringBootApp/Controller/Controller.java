@@ -52,7 +52,24 @@ public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) th
 		JsonProcessing.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
 		return PaeseSelezionato;
 	}
-}
+	
+	
+@RequestMapping(value = "/pippo/coca",  method = RequestMethod.POST)
+	public ArrayList<Nation> InfoCountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From) throws Exception  
+		{
+	ArrayList<String> roster = new ArrayList<String>();
+	ArrayList<Nation> GATTO = new ArrayList<Nation>();
+	if(InformationCheck.SlugCheck(Slug, JsonProcessing.SlugTake(JsonProcessing.readURL())) == true);
+	/**roster = JsonProcessing.DataTake(JsonProcessing.readURL3(Slug, From));
+	for (int i = 0; i < roster.size(); i++) {
+		if (From.equals(roster.get(i))) {
+			System.out.println("La Data selezionata è presente nell'elenco");
+			System.out.println(roster);**/
+			JsonProcessing.Parsing3(JsonProcessing.readURL3(Slug,From),GATTO);
+		
 
+	return GATTO;
+		}
+}
 
 

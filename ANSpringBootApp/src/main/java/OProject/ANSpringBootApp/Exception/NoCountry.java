@@ -13,7 +13,7 @@ public class NoCountry extends IOException {
 		 */
 		@Override
 		public String getMessage() {
-			return "Nessun Paese rispetta questi filtri!";
+			return "Questo Paese non fa parte della nostra lista!";
 		}
 
 	}

@@ -16,9 +16,8 @@ public static boolean SlugCheck(String Line, ArrayList<String> roster) {
 					return true;
 				}
 			}
-			System.out.println("Il Paese selezionato non esiste");
 			return false;
-
+			
 		}
 	}
 
