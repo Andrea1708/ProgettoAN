@@ -23,6 +23,9 @@ L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte d
 
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
 
+![Diagramma delle Classi Package](https://user-images.githubusercontent.com/72570036/97029644-03cfef00-155e-11eb-995e-210779fc5580.png)
+
+
 ## NOTE 
 
 Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obittivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
