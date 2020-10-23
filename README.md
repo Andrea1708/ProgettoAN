@@ -1,10 +1,10 @@
-#### ProgettoAN
+## ProgettoAN
 
-## PRESENTAZIONE
+# PRESENTAZIONE
 
 Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, attraverso un sistema di ricerca per paesi, permetta all'utente di consultare dati relativi all'andamento del virus Covid-19 nel mondo e nei vari paesi specifici. 
 
-## DESCRIZIONE DEL FUNZIONAMENTO
+# DESCRIZIONE DEL FUNZIONAMENTO
 
 
 ![Diagramma Casi d'Uso](https://user-images.githubusercontent.com/72570036/97028990-17c72100-155d-11eb-8e78-2fbc0315bc77.png)
@@ -28,11 +28,11 @@ ROTTA  | TIPO | DESCRIZIONE
 
 - metadata di un paese selezionato contenenti i dati sopracitati riferiti ad una specifica data richiesta dall'utente.
 
-## DIAGRAMMA DELLE CLASSI & PACKAGES
+# DIAGRAMMA DELLE CLASSI & PACKAGES
 
 ![Diagramma delle Classi Package](https://user-images.githubusercontent.com/72570036/97029644-03cfef00-155e-11eb-995e-210779fc5580.png)
 
-## SOFTWARE UTILIZZATI
+# SOFTWARE UTILIZZATI
 
 Eclipse - ambiente di sviluppo integrato
 
@@ -45,7 +45,7 @@ Postman - piattaforma per lo sviluppo API
 UML Designer - strumento di modellazione grafica
 
 
-## NOTE 
+# NOTE 
 
 Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obittivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
 
