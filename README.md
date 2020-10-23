@@ -81,16 +81,17 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
 
-### GETCOUNTRIES
+#### getcountries
 
-![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97054627-6983a180-1585-11eb-8954-0df3fc23b3f5.png)
+![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97055624-7bfeda80-1587-11eb-9704-fead3440fdf3.png)
 
-### GETLIVECOUNTRY
+#### getlivecountry
 
-![Diagramma in Sequenza Chiamata2](https://user-images.githubusercontent.com/72570036/97054787-c54e2a80-1585-11eb-82d7-6a145370857c.png)
+![Diagramma in Sequenza Chiamata2 (1)](https://user-images.githubusercontent.com/72570036/97055630-7f926180-1587-11eb-80b0-6cc353057d9f.png)
 
-### GETLIVECOUNTRYSLUG
+#### getlivecountryslug
 
+![Diagramma in Sequenza Chiamata3 (1)](https://user-images.githubusercontent.com/72570036/97055631-815c2500-1587-11eb-88a4-70140d47a445.png)
 
 ## SOFTWARE UTILIZZATI
 
