@@ -7,7 +7,8 @@ Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, at
 
 ## DESCRIZIONE DEL FUNZIONAMENTO
 
-![Diagramma Casi d'Uso](https://user-images.githubusercontent.com/72570036/97039208-5912fd00-156c-11eb-803f-86efd2c904ae.png)
+![Diagramma Casi d'Uso (6)](https://user-images.githubusercontent.com/72570036/97040539-64672800-156e-11eb-8da6-c8f996763638.png)
+
 
 
 
@@ -47,20 +48,21 @@ Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metod
 ![Diagramma delle Classi Packages](https://user-images.githubusercontent.com/72570036/97038665-72677980-156b-11eb-827c-fdd13dd41b51.png)
 
 
+#### package OProject.ANSpringBootApp;
+
+![Diagramma delle Classi Util](https://user-images.githubusercontent.com/72570036/97040206-ec006700-156d-11eb-8b20-0b14d9f6a81c.png)
 
 #### package OProject.ANSpringBootApp.Controller;
 
-La classe Controller gestisce le richieste dell'utente ed eventuali eccezioni.
+![Diagramma delle Classi Controller](https://user-images.githubusercontent.com/72570036/97040664-8e204f00-156e-11eb-97ea-1d52570dd74f.png)
 
 #### package OProject.ANSpringBootApp.Model;
 
-
+![Diagramma delle Classi Model](https://user-images.githubusercontent.com/72570036/97040594-71841700-156e-11eb-8a93-9c9fca576096.png)
 
 #### package OProject.ANSpringBootApp.Service;
 
 ![Diagramma delle Classi Service](https://user-images.githubusercontent.com/72570036/97039954-8f04b100-156d-11eb-89bf-e55433512609.png)
-
-La classe urlService si occupa di modificare l'URL cui indirizzarsi a seconda della richiesta effettuata dall'utente tramite lo slug.
 
 #### package OProject.ANSpringBootApp.Exception;
 
@@ -69,6 +71,8 @@ La classe urlService si occupa di modificare l'URL cui indirizzarsi a seconda de
 #### package OProject.ANSpringBootApp.JSON;
 
 ![Diagramma delle Classi JSON](https://user-images.githubusercontent.com/72570036/97039796-46e58e80-156d-11eb-8bf5-67c4690697f6.png)
+
+
 
 ## SOFTWARE UTILIZZATI
 
