@@ -58,11 +58,17 @@ La classe Controller gestisce le richieste dell'utente ed eventuali eccezioni.
 
 #### package OProject.ANSpringBootApp.Service;
 
-
+![Diagramma delle Classi Service](https://user-images.githubusercontent.com/72570036/97039954-8f04b100-156d-11eb-89bf-e55433512609.png)
 
 La classe urlService si occupa di modificare l'URL cui indirizzarsi a seconda della richiesta effettuata dall'utente tramite lo slug.
 
+#### package OProject.ANSpringBootApp.Exception;
 
+![Diagramma delle Classi Exception](https://user-images.githubusercontent.com/72570036/97039786-44833480-156d-11eb-85f5-fb06a7f4c06e.png)
+
+#### package OProject.ANSpringBootApp.JSON;
+
+![Diagramma delle Classi JSON](https://user-images.githubusercontent.com/72570036/97039796-46e58e80-156d-11eb-8bf5-67c4690697f6.png)
 
 ## SOFTWARE UTILIZZATI
 
