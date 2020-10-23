@@ -85,11 +85,11 @@ Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
 
 ![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97055624-7bfeda80-1587-11eb-9704-fead3440fdf3.png)
 
-#### getlivecountry
+#### getlivecountryslug
 
 ![Diagramma in Sequenza Chiamata2 (1)](https://user-images.githubusercontent.com/72570036/97055630-7f926180-1587-11eb-80b0-6cc353057d9f.png)
 
-#### getlivecountryslug
+#### getlivecountrydate
 
 ![Diagramma in Sequenza Chiamata3 (1)](https://user-images.githubusercontent.com/72570036/97055631-815c2500-1587-11eb-88a4-70140d47a445.png)
 
