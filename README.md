@@ -7,6 +7,10 @@ Il progetto si occupa della creazione e sviluppo di un'applicazione Java che, at
 ## DESCRIZIONE DEL FUNZIONAMENTO
 
 
+![Diagramma Casi d'Uso](https://user-images.githubusercontent.com/72570036/97028990-17c72100-155d-11eb-8e78-2fbc0315bc77.png)
+
+
+
 Il sistema di ricerca si serve dell'API reference per effettuare il download dell'intero dataset riguardante le specifiche di ogni paese e i relativi dati, effettua successivamente il parsing dei valori ottenuti modellando gli stessi in formato JSON.
 L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte distinte:
 
