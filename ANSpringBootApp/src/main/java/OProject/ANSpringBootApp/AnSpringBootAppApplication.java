@@ -13,6 +13,7 @@ import java.io.IOException;
 public class AnSpringBootAppApplication {
 
 	public static void main(String[] args) throws IOException {
+	
 		
 	SpringApplication.run(AnSpringBootAppApplication.class, args);
 	}

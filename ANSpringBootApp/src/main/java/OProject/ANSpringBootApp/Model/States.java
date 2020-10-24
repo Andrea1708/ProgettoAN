@@ -6,7 +6,7 @@ public class States {
 		 */
 		private String Country;
 		/**
-		 * nome dello stato da mettere sul rest
+		 * nation's name to search
 		 */
 		private String Slug;
 		/**

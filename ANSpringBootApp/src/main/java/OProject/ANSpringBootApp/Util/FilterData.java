@@ -7,6 +7,7 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.Model.Nation;
 
 public class FilterData {
+	
 	public static ArrayList<Nation> DataFil (String Slug, String From){
 	ArrayList<String> roster = new ArrayList<String>();
 	ArrayList<Nation> LS = new ArrayList<Nation>();

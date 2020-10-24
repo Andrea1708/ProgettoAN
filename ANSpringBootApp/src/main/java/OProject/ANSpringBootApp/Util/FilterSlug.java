@@ -24,6 +24,7 @@ public class FilterSlug {
 			}
 		}
 		System.out.println(roster);
+		
 		return roster;
 	}
 	

@@ -17,5 +17,6 @@ public class URLservice {
 	public static String getURL2(String Letter, String Data) {
 		String Codice = "https://api.covid19api.com/live/country/"+ Letter+"/status/confirmed/date/"+Data;
 		return Codice;
+		
 		}
 }

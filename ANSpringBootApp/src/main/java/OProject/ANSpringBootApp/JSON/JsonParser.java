@@ -30,6 +30,7 @@ public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 	
 	for(int i=0; i < jsonArr2.length(); i++) 
 	{
+		
 		Nation objnum = new Nation();
 		JSONObject json;
 		json= (JSONObject) jsonArr2.get(i);

@@ -4,10 +4,10 @@ import java.io.IOException;
 
 public class NoCountry extends IOException {
 
-		private static final long serialVersionUID = 1L; /** vedere bene cosa serve la serial vesion*/
+		private static final long serialVersionUID = 1L; 
 
 		/**
-		 * Ottiene il messaggio da stampare.
+		 * get the exception message.
 		 *
 		 * @return String
 		 */

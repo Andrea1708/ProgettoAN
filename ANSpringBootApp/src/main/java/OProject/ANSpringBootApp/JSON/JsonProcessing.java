@@ -30,7 +30,7 @@ public static JSONArray readURL() throws JSONException {
 		sc.close();
 		JSONArray jsonArr = new JSONArray(inline);
 		conn.disconnect();
-		// return dell'array
+		// array's return 
 		return jsonArr;
 		}catch(Exception e) {
 		}
@@ -54,9 +54,9 @@ public static JSONArray readURL2(String Name) throws JSONException {
 		sc.close();
 		JSONArray jsonArr2  = new JSONArray(inline);
 		conn.disconnect();
-		// stampa array con dentro la stringa
+		// print the array
 		System.out.println(jsonArr2);
-		// return dell'array
+		// array's return
 		return jsonArr2;
 		}catch(Exception e) {
 		}
@@ -67,6 +67,7 @@ public static JSONArray readURL2(String Name) throws JSONException {
 
 public static JSONArray readURL3(String Name, String From) throws JSONException {
 	String inline = "";
+	
 	try {
 		String myURL = URLservice.getURL2(Name,From);
 		System.out.println(myURL);
@@ -81,9 +82,9 @@ public static JSONArray readURL3(String Name, String From) throws JSONException 
 		sc.close();
 		JSONArray jsonArr3  = new JSONArray(inline);
 		conn.disconnect();
-		// stampa array con dentro la stringa
+		// print the array
 		System.out.println(jsonArr3);
-		// return dell'array
+		// array's return
 		return jsonArr3;
 		}catch(Exception e) {
 		}
