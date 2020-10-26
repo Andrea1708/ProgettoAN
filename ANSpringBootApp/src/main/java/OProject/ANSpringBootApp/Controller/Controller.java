@@ -1,15 +1,14 @@
 package OProject.ANSpringBootApp.Controller;
 
 
-import java.io.IOException;
+
 import java.util.ArrayList;
 
-import org.json.JSONException;
+
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,8 +18,6 @@ import OProject.ANSpringBootApp.JSON.JsonParser;
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
-
-import OProject.ANSpringBootApp.Util.FilterData;
 import OProject.ANSpringBootApp.Util.FilterSlug;
 
 
@@ -34,7 +31,7 @@ public class Controller {
 	 * @Param ISO2    codice di ogni paese
 	 */
 @RequestMapping(value="/countries", method = RequestMethod.GET)
-public ArrayList<States> getAllCountries() throws IOException 
+public ArrayList<States> getAllCountries() 
 {
 		ArrayList<States> Nomi = new ArrayList<States>();
 		JsonParser.Parsing(JsonProcessing.readURL(),Nomi);
@@ -45,7 +42,7 @@ public ArrayList<States> getAllCountries() throws IOException
 
 	
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
-public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) throws Exception  
+public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) 
 	{	
 		if(FilterSlug.SlugCheck(Slug, FilterSlug.SlugTake(JsonProcessing.readURL())) == true);
 		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();

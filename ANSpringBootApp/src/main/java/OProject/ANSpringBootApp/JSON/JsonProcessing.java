@@ -6,7 +6,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import OProject.ANSpringBootApp.Model.Nation;
@@ -15,7 +14,7 @@ import OProject.ANSpringBootApp.Service.URLservice;
 
 public class JsonProcessing {
 
-public static JSONArray readURL() throws JSONException {
+public static JSONArray readURL()  {
 	String inline = "";
 	try {
 		String myURL = "https://api.covid19api.com/countries";
@@ -38,7 +37,7 @@ public static JSONArray readURL() throws JSONException {
 		} 
 
 
-public static JSONArray readURL2(String Name) throws JSONException {
+public static JSONArray readURL2(String Name)  {
 	String inline = "";
 	try {
 		String myURL = URLservice.getURL(Name);
