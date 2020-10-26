@@ -19,9 +19,9 @@ L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte d
 
 ROTTA  | TIPO | DESCRIZIONE
 ------------- | ------------- | --------------
-\countries | GET  | dati riconoscitivi delle nazioni
-\live\country | GET | dati relativi al covid 19 per ogni nazione
-\live\country\slug | POST | dati di una sola nazione
+/countries | GET  | dati riconoscitivi delle nazioni
+/live/country | GET | dati relativi al covid 19 per ogni nazione
+/live/country/slug | POST | dati di una sola nazione
 
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
