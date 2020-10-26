@@ -45,7 +45,7 @@ public ArrayList<States> getallcountries()
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
 	{	
-		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true);
+	if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true);
 		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
 		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
 		return PaeseSelezionato;

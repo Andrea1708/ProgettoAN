@@ -10,6 +10,7 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 
 public class SlugManagement {
 	
+
 public static ArrayList<String> SlugTake(JSONArray jsonArr){
 			ArrayList<String> roster = new ArrayList<String>();
 			if(jsonArr!= null) {

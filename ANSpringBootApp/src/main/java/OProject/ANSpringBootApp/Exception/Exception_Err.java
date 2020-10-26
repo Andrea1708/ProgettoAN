@@ -7,7 +7,7 @@ private static final long serialVersionUID = 1L;
 	/**
 	 * Ottiene il messaggio da stampare
 	 *
-	 * @return String
+	 * @return  String
 	 */
 	public abstract String getMessage();
 }
