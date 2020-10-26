@@ -19,16 +19,13 @@ L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte d
 
 ROTTA  | TIPO | DESCRIZIONE
 ------------- | ------------- | --------------
-\countries | GET  | dati riconoscitivi delle nazioni
-\live\country | GET | dati relativi al covid 19 per ogni nazione
-\live\country\slug | POST | dati di una sola nazione
+/countries | GET  | dati riconoscitivi delle nazioni
+/info | POST | dati di una sola nazione
 
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
 
-- /LIVE/COUNTRY: restituisce il dataset completo di tutti le nazioni contenente i seguenti dati circa la situazione sanitaria dovuta al virus Covid-19: Nome della nazione, Sigla, Latitudine, Longitudine, Casi confermati totali, Morti, Guariti, Attivi, Data di riferimento.
-
-- /LIVE/COUNTRY/SLUG: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente i dati sopracitati.
+- /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
 
 #### FILTRI
 
