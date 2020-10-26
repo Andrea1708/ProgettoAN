@@ -25,8 +25,6 @@ ROTTA  | TIPO | DESCRIZIONE
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
 
-- /LIVE/COUNTRY: restituisce il dataset completo di tutti le nazioni contenente i seguenti dati circa la situazione sanitaria dovuta al virus Covid-19: Nome della nazione, Sigla, Latitudine, Longitudine, Casi confermati totali, Morti, Guariti, Attivi, Data di riferimento.
-
 - /LIVE/COUNTRY/SLUG: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente i dati sopracitati.
 
 #### FILTRI
