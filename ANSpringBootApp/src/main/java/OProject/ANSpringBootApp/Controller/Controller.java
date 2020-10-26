@@ -16,9 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import OProject.ANSpringBootApp.JSON.JsonParser;
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
+import OProject.ANSpringBootApp.JSON.SlugManagement;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
-import OProject.ANSpringBootApp.Util.FilterSlug;
+
 
 
 @RestController
@@ -31,7 +32,7 @@ public class Controller {
 	 * @Param ISO2    codice di ogni paese
 	 */
 @RequestMapping(value="/countries", method = RequestMethod.GET)
-public ArrayList<States> getAllCountries() 
+public ArrayList<States> getallcountries() 
 {
 		ArrayList<States> Nomi = new ArrayList<States>();
 		JsonParser.Parsing(JsonProcessing.readURL(),Nomi);
@@ -42,9 +43,9 @@ public ArrayList<States> getAllCountries()
 
 	
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
-public ArrayList<Nation> DatesCountry(@RequestParam(name="Slug") String Slug) 
+public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
 	{	
-		if(FilterSlug.SlugCheck(Slug, FilterSlug.SlugTake(JsonProcessing.readURL())) == true);
+		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true);
 		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
 		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
 		return PaeseSelezionato;
