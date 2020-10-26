@@ -1,8 +1,7 @@
 package OProject.ANSpringBootApp.Exception;
 
-import java.io.IOException;
 
-public class NoCountry extends IOException {
+public class NoCountry extends Exception_Err {
 
 		private static final long serialVersionUID = 1L; 
 
@@ -12,7 +11,8 @@ public class NoCountry extends IOException {
 		 * @return String
 		 */
 		@Override
-		public String getMessage() {
+		public String getMessage() 
+		{
 			
 			return "Questo Paese non fa parte della nostra lista!";
 		}

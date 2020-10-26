@@ -42,7 +42,6 @@ public static JSONArray readURL2(String Name) throws JSONException {
 	String inline = "";
 	try {
 		String myURL = URLservice.getURL(Name);
-		System.out.println(myURL);
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
@@ -63,33 +62,6 @@ public static JSONArray readURL2(String Name) throws JSONException {
 		return null;
 		} 
 
-
-
-public static JSONArray readURL3(String Name, String From) throws JSONException {
-	String inline = "";
-	
-	try {
-		String myURL = URLservice.getURL2(Name,From);
-		System.out.println(myURL);
-		URL url = new URL(myURL);
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.connect();
-		Scanner sc = new Scanner(url.openStream());
-		while(sc.hasNext())
-		{
-			inline+=sc.nextLine();
-		}
-		sc.close();
-		JSONArray jsonArr3  = new JSONArray(inline);
-		conn.disconnect();
-		// print the array
-		System.out.println(jsonArr3);
-		// array's return
-		return jsonArr3;
-		}catch(Exception e) {
-		}
-		return null;
-		} 
 
 
 		

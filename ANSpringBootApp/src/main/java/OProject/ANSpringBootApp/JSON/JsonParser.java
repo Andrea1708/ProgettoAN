@@ -47,25 +47,7 @@ public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 	}
 }
 
-public static void Parsing3 (JSONArray jsonArr3, ArrayList<Nation> list){				
-	
-	for(int i=0; i < jsonArr3.length(); i++) 
-	{
-		Nation objnum = new Nation();
-		JSONObject json;
-		json= (JSONObject) jsonArr3.get(i);
-		objnum.setCountry((String)json.get("Country"));
-		objnum.setCountryCode((String)json.get("CountryCode"));
-		objnum.setLat((String)json.get("Lat"));
-		objnum.setLon((String)json.get("Lon"));
-		objnum.setActive((Integer)json.get("Active"));
-		objnum.setDeaths((Integer)json.get("Deaths"));
-		objnum.setConfirmed((Integer)json.get("Confirmed"));
-		objnum.setRecovered((Integer)json.get("Recovered"));
-		objnum.setDate((String)json.get("Date"));
-		list.add(objnum);
-	}
-}
+
 
 
 
