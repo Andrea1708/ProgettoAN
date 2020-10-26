@@ -25,7 +25,7 @@ ROTTA  | TIPO | DESCRIZIONE
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
 
-- /LIVE/COUNTRY/SLUG: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente i dati sopracitati.
+- /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
 
 #### FILTRI
 
