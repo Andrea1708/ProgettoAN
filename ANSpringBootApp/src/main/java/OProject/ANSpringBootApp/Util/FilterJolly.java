@@ -2,13 +2,15 @@ package OProject.ANSpringBootApp.Util;
 
 import java.util.ArrayList;
 
+import OProject.ANSpringBootApp.JSON.JsonParser;
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
+import OProject.ANSpringBootApp.Model.Nation;
 
 
 public class FilterJolly {
 	
-public static ArrayList<String> jollyletter (char a) {
+public static ArrayList<String> jollyletter (char LetterChosen) {
 	String Name= "";
 	char c1;
 	ArrayList<String> Results = new ArrayList<String>();
@@ -17,10 +19,10 @@ public static ArrayList<String> jollyletter (char a) {
 	for (int i=0; i < RS.size(); i++) {                  // dobbiamo trasformarlo in un for each
 		Name = RS.get(i);  								
 		c1 = Name.charAt(0);
-		if(a == c1)
+		if(LetterChosen== c1)
 			Results.add(Name);
 		}
-	
+		System.out.println(Results);
 	   return Results;
 }
 

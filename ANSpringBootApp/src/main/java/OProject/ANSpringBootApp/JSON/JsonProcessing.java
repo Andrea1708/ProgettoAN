@@ -37,10 +37,12 @@ public static JSONArray readURL()  {
 		} 
 
 
-public static JSONArray readURL2(String Name)  {
+public static JSONArray readURL2(String CN)  {
 	String inline = "";
 	try {
-		String myURL = URLservice.getURL(Name);
+		String myURL = URLservice.getURL(CN);
+		// print the URL
+		//System.out.println(myURL);
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();
@@ -60,11 +62,7 @@ public static JSONArray readURL2(String Name)  {
 		}
 		return null;
 		} 
-
-
-
 		
-
 }	
 
 

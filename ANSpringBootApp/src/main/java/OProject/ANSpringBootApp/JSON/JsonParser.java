@@ -27,13 +27,13 @@ public static void Parsing (JSONArray jsonArr, ArrayList<States> list){
 
 
 public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
-	
-	for(int i=0; i < jsonArr2.length(); i++) 
+
+	for(int j=0; j < jsonArr2.length(); j++) 
 	{
 		
 		Nation objnum = new Nation();
 		JSONObject json;
-		json= (JSONObject) jsonArr2.get(i);
+		json= (JSONObject) jsonArr2.get(j);
 		objnum.setCountry((String)json.get("Country"));
 		objnum.setCountryCode((String)json.get("CountryCode"));
 		objnum.setLat((String)json.get("Lat"));

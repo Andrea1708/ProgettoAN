@@ -1,5 +1,9 @@
 package OProject.ANSpringBootApp.Service;
 
+import java.util.ArrayList;
+
+
+
 public class URLservice {
 
 	public final static String URL = "https://api.covid19api.com/live/country/";
@@ -14,7 +18,4 @@ public class URLservice {
 		return IndexData;
 		}
 	
-
-		
-	}
-
+}

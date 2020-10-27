@@ -19,6 +19,7 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
+import OProject.ANSpringBootApp.Service.URLservice;
 import OProject.ANSpringBootApp.Util.FilterJolly;
 import OProject.ANSpringBootApp.Util.FilterPeriod;
 
@@ -62,10 +63,16 @@ public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug)
 	 * 
 	 */
 @RequestMapping(value = "/char",  method = RequestMethod.POST)
-public ArrayList<String> listcountry(@RequestParam(name="Letter") char Letter) 
+public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter) 
 {
-	return FilterJolly.jollyletter(Letter);
-	
+	ArrayList<String> FJ = new ArrayList<String>();
+	ArrayList<Nation> NA = new ArrayList<Nation>();
+	FJ = FilterJolly.jollyletter(Letter);
+	for(int i=0; i < FJ.size(); i++) {
+		
+		JsonParser.Parsing2(JsonProcessing.readURL2(FJ.get(i)),NA);
+	}
+	return NA;
 }
 	/**
 	 * management of the filter that return the nation's values in a specific period
