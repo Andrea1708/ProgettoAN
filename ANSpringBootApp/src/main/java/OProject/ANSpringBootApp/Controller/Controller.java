@@ -19,6 +19,7 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
+import OProject.ANSpringBootApp.Util.FilterJolly;
 
 
 
@@ -40,16 +41,31 @@ public ArrayList<States> getallcountries()
 		
 		
 }
-
-	
+	/**
+	 * management of the route "/info" that return the dataset of a specific state
+	 * @param Slug
+	 * 
+	 */
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
 	{	
-	if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true);
+		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true);
 		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
 		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
 		return PaeseSelezionato;
 	}
+	
+	/**
+	 * management of the filter that return the nation's list that start with a specific char
+	 * @param Letter
+	 * 
+	 */
+@RequestMapping(value = "/char",  method = RequestMethod.POST)
+public ArrayList<String> listcountry(@RequestParam(name="Letter") char Letter) 
+{
+	return FilterJolly.jollyletter(Letter);
+	
+}
 	
 }
 
