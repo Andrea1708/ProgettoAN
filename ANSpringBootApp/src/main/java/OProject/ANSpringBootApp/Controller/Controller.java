@@ -20,6 +20,7 @@ import OProject.ANSpringBootApp.JSON.SlugManagement;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
 import OProject.ANSpringBootApp.Util.FilterJolly;
+import OProject.ANSpringBootApp.Util.FilterPeriod;
 
 
 
@@ -66,7 +67,17 @@ public ArrayList<String> listcountry(@RequestParam(name="Letter") char Letter)
 	return FilterJolly.jollyletter(Letter);
 	
 }
+	/**
+	 * management of the filter that return the nation's values in a specific period
+	 * @param from
+	 * @param to 
+	 */
+@RequestMapping(value = "/period",  method = RequestMethod.POST)
+public ArrayList<Nation> valuescountry(@RequestParam(name="From") String From, @RequestParam(name="To") String To) 
+{
+	return FilterPeriod.dataFil(From, To);
+	
 	
 }
 
-
+}
