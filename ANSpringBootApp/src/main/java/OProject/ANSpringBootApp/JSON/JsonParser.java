@@ -50,8 +50,8 @@ public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 }
 
 public static void ParsingData(JSONArray jsonData, ArrayList<Nation> list, String datainizio, String datafine) throws ParseException {
-	list.clear();
-	for(int i=0; i<jsonData.length(); i++) {
+	for(int i=0; i<jsonData.length(); i++) 
+	{
 		Nation obj = new Nation();
 		JSONObject objson;
 		objson= (JSONObject) jsonData.get(i);

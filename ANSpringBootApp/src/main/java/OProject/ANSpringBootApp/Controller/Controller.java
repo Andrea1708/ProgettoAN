@@ -77,6 +77,8 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter)
 }
 	/**
 	 * management of the filter that return the nation's values in a specific period
+	 * the period that we can select goes from 2020-04-13 to 2020-05-06 but for the period 
+	 * that goes from 2020-04-29 to 2020-05-03 we haven't the daily report
 	 * @param from
 	 * @param to 
 	 */
@@ -84,12 +86,12 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter)
 public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From, @RequestParam(name="To") String To) throws ParseException
 {
 	ArrayList<Nation> dv = new ArrayList<Nation>();
-	if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-13T00:00:00Z"))))
-			&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-20T00:00:00Z")))))
+	if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-12T00:00:00Z"))))
+			&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-07T00:00:00Z")))))
 	{
 		if(FilterPeriod.datemenagement(To).after(FilterPeriod.datemenagement(From)))
 			{
-					JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv, From, To);
+					JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv,From,To);
 				
 			} 
 	} 
