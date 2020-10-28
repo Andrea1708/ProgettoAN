@@ -2,10 +2,10 @@ package OProject.ANSpringBootApp.Util;
 
 import java.util.ArrayList;
 
-import OProject.ANSpringBootApp.JSON.JsonParser;
+
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
-import OProject.ANSpringBootApp.Model.Nation;
+
 
 
 public class FilterJolly {

@@ -6,8 +6,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 
-import org.json.JSONObject;
-import org.json.JSONArray;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,6 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
-import OProject.ANSpringBootApp.Service.URLservice;
 import OProject.ANSpringBootApp.Util.FilterJolly;
 import OProject.ANSpringBootApp.Util.FilterPeriod;
 

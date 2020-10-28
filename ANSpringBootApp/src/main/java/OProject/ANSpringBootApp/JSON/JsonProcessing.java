@@ -3,13 +3,10 @@ package OProject.ANSpringBootApp.JSON;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Scanner;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
-import OProject.ANSpringBootApp.Model.Nation;
-import OProject.ANSpringBootApp.Model.States;
+
 import OProject.ANSpringBootApp.Service.URLservice;
 
 public class JsonProcessing {
