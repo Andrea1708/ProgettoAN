@@ -1,5 +1,6 @@
 package OProject.ANSpringBootApp.JSON;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -7,6 +8,7 @@ import org.json.JSONObject;
 
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
+import OProject.ANSpringBootApp.Util.FilterPeriod;
 
 public class JsonParser {
 	
@@ -28,7 +30,7 @@ public static void Parsing (JSONArray jsonArr, ArrayList<States> list){
 
 public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
 
-	for(int j=0; j < jsonArr2.length(); j++) 
+	for(int j=0; j < jsonArr2.length() ; j++) 
 	{
 		
 		Nation objnum = new Nation();
@@ -47,8 +49,30 @@ public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 	}
 }
 
-
-
+public static void ParsingData(JSONArray jsonData, ArrayList<Nation> list, String datainizio, String datafine) throws ParseException {
+	list.clear();
+	for(int i=0; i<jsonData.length(); i++) {
+		Nation obj = new Nation();
+		JSONObject objson;
+		objson= (JSONObject) jsonData.get(i);
+		if(((FilterPeriod.datemenagement((String)objson.get("Date"))).after(FilterPeriod.datemenagement(datainizio))
+		||((FilterPeriod.datemenagement((String)objson.get("Date"))).equals(FilterPeriod.datemenagement(datainizio))))
+		&&((FilterPeriod.datemenagement((String)objson.get("Date")).before(FilterPeriod.datemenagement(datafine)))
+		||((FilterPeriod.datemenagement((String)objson.get("Date"))).equals(FilterPeriod.datemenagement(datafine)))))
+		{
+			obj.setCountry((String)objson.get("Country"));
+			obj.setCountryCode((String)objson.get("CountryCode"));
+			obj.setLat((String)objson.get("Lat"));
+			obj.setLon((String)objson.get("Lon"));
+			obj.setActive((Integer)objson.get("Active"));
+			obj.setDeaths((Integer)objson.get("Deaths"));
+			obj.setConfirmed((Integer)objson.get("Confirmed"));
+			obj.setRecovered((Integer)objson.get("Recovered"));
+			obj.setDate((String)objson.get("Date"));
+			list.add(obj);
+		}
+	}
+}
 
 
 

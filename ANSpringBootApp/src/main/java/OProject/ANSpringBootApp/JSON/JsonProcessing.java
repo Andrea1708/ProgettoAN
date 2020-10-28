@@ -42,7 +42,7 @@ public static JSONArray readURL2(String CN)  {
 	try {
 		String myURL = URLservice.getURL(CN);
 		// print the URL
-		//System.out.println(myURL);
+		System.out.println(myURL);
 		URL url = new URL(myURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.connect();

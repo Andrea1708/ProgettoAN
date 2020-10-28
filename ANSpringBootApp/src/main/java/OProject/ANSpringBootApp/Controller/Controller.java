@@ -2,6 +2,7 @@ package OProject.ANSpringBootApp.Controller;
 
 
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 
@@ -65,14 +66,14 @@ public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug)
 @RequestMapping(value = "/char",  method = RequestMethod.POST)
 public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter) 
 {
-	ArrayList<String> FJ = new ArrayList<String>();
-	ArrayList<Nation> NA = new ArrayList<Nation>();
-	FJ = FilterJolly.jollyletter(Letter);
-	for(int i=0; i < FJ.size(); i++) {
+	ArrayList<String> fj = new ArrayList<String>();
+	ArrayList<Nation> na = new ArrayList<Nation>();
+	fj = FilterJolly.jollyletter(Letter);
+	for(int i=0; i < fj.size(); i++) {
 		
-		JsonParser.Parsing2(JsonProcessing.readURL2(FJ.get(i)),NA);
+		JsonParser.Parsing2(JsonProcessing.readURL2(fj.get(i)),na);
 	}
-	return NA;
+	return na;
 }
 	/**
 	 * management of the filter that return the nation's values in a specific period
@@ -80,11 +81,21 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter)
 	 * @param to 
 	 */
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
-public ArrayList<Nation> valuescountry(@RequestParam(name="From") String From, @RequestParam(name="To") String To) 
+public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From, @RequestParam(name="To") String To) throws ParseException
 {
-	return FilterPeriod.dataFil(From, To);
+	ArrayList<Nation> dv = new ArrayList<Nation>();
+	if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-13T00:00:00Z"))))
+			&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-20T00:00:00Z")))))
+	{
+		if(FilterPeriod.datemenagement(To).after(FilterPeriod.datemenagement(From)))
+			{
+					JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv, From, To);
+				
+			} 
+	} 
 	
-	
+	return dv;
+	}
 }
 
-}
+
