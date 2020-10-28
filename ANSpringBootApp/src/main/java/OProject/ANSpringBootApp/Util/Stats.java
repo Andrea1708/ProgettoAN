@@ -50,7 +50,7 @@ public class Stats {
 		int max=0;
 		for(Nation f : lf)
 		{
-			Integer stringa2 = f.getConfirmed();
+			Integer  = f.getConfirmed();
 			if(stringa2.length()>max) max = stringa2.length();
 		}
 

@@ -14,11 +14,12 @@ public class JsonParser {
 	
 public static void Parsing (JSONArray jsonArr, ArrayList<States> list){				
 	
-	for(int i=0; i < jsonArr.length();i++) 
+	for(Object a : jsonArr)
+	
 	{
 		States objval = new States();
 		JSONObject json;
-		json= (JSONObject) jsonArr.get(i);
+		json= (JSONObject) a; 
 		objval.setCountry((String)json.get("Country"));
 		objval.setSlug((String)json.get("Slug"));
 		objval.setISO2((String)json.get("ISO2"));
@@ -30,12 +31,13 @@ public static void Parsing (JSONArray jsonArr, ArrayList<States> list){
 
 public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
 
-	for(int j=0; j < jsonArr2.length() ; j++) 
+	for(Object b :jsonArr2)
+	
 	{
 		
 		Nation objnum = new Nation();
 		JSONObject json;
-		json= (JSONObject) jsonArr2.get(j);
+		json= (JSONObject) b; 
 		objnum.setCountry((String)json.get("Country"));
 		objnum.setCountryCode((String)json.get("CountryCode"));
 		objnum.setLat((String)json.get("Lat"));
@@ -50,11 +52,11 @@ public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 }
 
 public static void ParsingData(JSONArray jsonData, ArrayList<Nation> list, String datainizio, String datafine) throws ParseException {
-	for(int i=0; i<jsonData.length(); i++) 
+	for(Object c: jsonData)
 	{
 		Nation obj = new Nation();
 		JSONObject objson;
-		objson= (JSONObject) jsonData.get(i);
+		objson= (JSONObject) c; 
 		if(((FilterPeriod.datemenagement((String)objson.get("Date"))).after(FilterPeriod.datemenagement(datainizio))
 		||((FilterPeriod.datemenagement((String)objson.get("Date"))).equals(FilterPeriod.datemenagement(datainizio))))
 		&&((FilterPeriod.datemenagement((String)objson.get("Date")).before(FilterPeriod.datemenagement(datafine)))

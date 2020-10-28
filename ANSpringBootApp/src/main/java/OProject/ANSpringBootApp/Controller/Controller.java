@@ -2,13 +2,14 @@ package OProject.ANSpringBootApp.Controller;
 
 
 
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
-
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -83,9 +84,11 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter)
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
 public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From, @RequestParam(name="To") String To) throws ParseException
 {
-	ArrayList<Nation> dv = new ArrayList<Nation>();
-	if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-12T00:00:00Z"))))
-			&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-07T00:00:00Z")))))
+
+ArrayList<Nation> dv = new ArrayList<Nation>();
+if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-12T00:00:00Z"))))
+	&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-07T00:00:00Z")))))
+	
 	{
 		if(FilterPeriod.datemenagement(To).after(FilterPeriod.datemenagement(From)))
 			{
@@ -95,7 +98,17 @@ public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @
 	} 
 	
 	return dv;
-	}
+}
+	/**
+	 * management of the stats that return max, min, media, dev standard  
+	 */
+
+@RequestMapping(value = "/stats",  method = RequestMethod.GET)
+public ResponseEntity<Object> getStats(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="stats") List<String> stats) throws NoSuchMethodException, InvocationTargetException
+{
+	
+}
+
 }
 
 

@@ -16,8 +16,8 @@ public static ArrayList<String> jollyletter (char LetterChosen) {
 	ArrayList<String> Results = new ArrayList<String>();
 	ArrayList<String> RS = new ArrayList<String>();
 	RS = SlugManagement.SlugTake(JsonProcessing.readURL());
-	for (int i=0; i < RS.size(); i++) {                  // dobbiamo trasformarlo in un for each
-		Name = RS.get(i);  								
+	for(String indicator: RS) {
+		Name = indicator;  								
 		c1 = Name.charAt(0);
 		if(LetterChosen== c1)
 			Results.add(Name);
