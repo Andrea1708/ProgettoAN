@@ -72,16 +72,20 @@ public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug)
 	 * 
 	 */
 @RequestMapping(value = "/char",  method = RequestMethod.POST)
-public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter) 
+public ArrayList<Nation> listcountry(@RequestParam(name="Letters") String Letters) 
 {
 	ArrayList<String> fj = new ArrayList<String>();
 	ArrayList<Nation> na = new ArrayList<Nation>();
-	fj = FilterJolly.jollyletter(Letter);
+	fj = FilterJolly.jollyletter(Letters);
 	for(int i=0; i < fj.size(); i++) {
 		
 		JsonParser.Parsing2(JsonProcessing.readURL2(fj.get(i)),na);
-	}
+		
+		}
+				
+	
 	return na;
+
 }
 	/**
 	 * management of the filter that return the nation's values in a specific period
@@ -114,7 +118,8 @@ if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-0
 	 */
 
 @RequestMapping(value = "/stats",  method = RequestMethod.POST)
-public HashMap<String,Number> getStats(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="Statics") ArrayList<String> stats) throws NoSuchMethodException, InvocationTargetException
+public HashMap<String,Number> getstatics(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="Statics") ArrayList<String> stats) 
+					throws NoSuchMethodException, InvocationTargetException
 {
 		ArrayList<Nation> sn = new ArrayList<Nation>();
 		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true) 
@@ -128,7 +133,7 @@ public HashMap<String,Number> getStats(@RequestParam (name ="Slug") String Slug,
 
 
 @ExceptionHandler(Exception_Err.class)
-public ResponseEntity<Object> handleE_Project(Exception_Err e) {
+public ResponseEntity<Object> handler(Exception_Err e) {
 	ExceptionManager error = new ExceptionManager(Calendar.getInstance() , HttpStatus.BAD_REQUEST , e.getClass().getCanonicalName() , e.getMessage());
 	return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
 }

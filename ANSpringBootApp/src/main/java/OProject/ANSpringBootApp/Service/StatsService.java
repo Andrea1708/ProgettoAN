@@ -17,12 +17,13 @@ public class StatsService {
 	 */
 	
 
-	public static HashMap<String, Number> calculate (ArrayList<Nation> lf ,ArrayList<String> stats) throws NoSuchMethodException, InvocationTargetException {
+	public static HashMap<String, Number> calculate (ArrayList<Nation> lf ,ArrayList<String> stats) 
+			throws NoSuchMethodException, InvocationTargetException {
 
 		//HashMap in cui inserire i valori delle statistiche richieste
 		HashMap<String, Number> statistiche = new HashMap<String, Number>(); 
 
-		statistiche.put("Totale Casi confermati: ", lf.size());
+		statistiche.put("Totale Casi", lf.size());
 		
 		//la classe in cui sono contenuti i metodi per il calcolo delle statistiche
 		Stats f = new Stats(); 
