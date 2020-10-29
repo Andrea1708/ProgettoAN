@@ -17,13 +17,6 @@ public class Stats {
 		 allStats.add("media"); allStats.add("min"); allStats.add("max"); allStats.add("devStd"); allStats.add("var");
 	}
 
-	// metodo per ottenere tutte le statistiche
-
-	public static List<String> getAllStats()
-	{
-		return allStats;
-	}
-
 	/**
 	 * Metodo per calcolare la media dei casi confermati
 	 */
@@ -50,8 +43,8 @@ public class Stats {
 		int max=0;
 		for(Nation f : lf)
 		{
-			Integer  = f.getConfirmed();
-			if(stringa2.length()>max) max = stringa2.length();
+			Integer numero1 = f.getConfirmed();
+			if( numero1 > max ) max = numero1;
 		}
 
 		return max;
@@ -63,11 +56,11 @@ public class Stats {
 
 	public static int min(List<Nation> lf)
 	{
-		int min=lf.get(0).getLocation().length();
+		int min=0;
 		for(Nation f : lf)
 		{
-			Integer stringa2 = f.getConfirmed();
-			if(stringa2.length()<min) min = stringa2.length();
+			Integer numero1 = f.getConfirmed();
+			if( numero1 < min ) min = numero1;
 		}
 		return min;
 	}
@@ -92,6 +85,4 @@ public class Stats {
     public static double devStd(List<Nation> lista) {
         return Math.sqrt(var(lista));
     }
-}
-
 }

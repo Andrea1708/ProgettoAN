@@ -5,16 +5,23 @@ package OProject.ANSpringBootApp.Controller;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import OProject.ANSpringBootApp.Exception.ExceptionManager;
+import OProject.ANSpringBootApp.Exception.Exception_Err;
+import OProject.ANSpringBootApp.Exception.IncorrectOrder;
+import OProject.ANSpringBootApp.Exception.NoCountry;
+import OProject.ANSpringBootApp.Exception.NoDate;
 import OProject.ANSpringBootApp.JSON.JsonParser;
 import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
@@ -46,14 +53,15 @@ public ArrayList<States> getallcountries()
 	/**
 	 * management of the route "/info" that return the dataset of a specific state
 	 * @param Slug
-	 * 
+	 * @throws NoCountry Exception that works when the user write a country that dosen't exist in our list
 	 */
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
-	{	
-		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true);
-		ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
+	{	ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
+		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true) 
+		{
 		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
+		} else throw new NoCountry();
 		return PaeseSelezionato;
 	}
 	
@@ -80,9 +88,13 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter)
 	 * that goes from 2020-04-29 to 2020-05-03 we haven't the daily report
 	 * @param from
 	 * @param to 
+	 * @throws ParseException that work when the user make mistake in the data writing
+	 * @throws NoData is an exception that is triggered when we don't enter a date that belongs to our ranking
+	 * @throws IncorrectOrdere in an exception that is triggered when we don't enter the dates in the correct order
 	 */
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
-public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From, @RequestParam(name="To") String To) throws ParseException
+public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From,
+								@RequestParam(name="To") String To) throws ParseException
 {
 
 ArrayList<Nation> dv = new ArrayList<Nation>();
@@ -94,21 +106,29 @@ if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-0
 			{
 					JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv,From,To);
 				
-			} 
-	} 
+			} else throw new IncorrectOrder();
+	}else throw new NoDate();
 	
 	return dv;
 }
 	/**
-	 * management of the stats that return max, min, media, dev standard  
+	 * management of the stats that return max, min, media, dev standard, var  of the specific Nation's dates
 	 */
 
-@RequestMapping(value = "/stats",  method = RequestMethod.GET)
+/**@RequestMapping(value = "/stats",  method = RequestMethod.GET)
 public ResponseEntity<Object> getStats(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="stats") List<String> stats) throws NoSuchMethodException, InvocationTargetException
 {
 	
+	
 }
+**/
 
+
+@ExceptionHandler(Exception_Err.class)
+public ResponseEntity<Object> handleE_Project(Exception_Err e) {
+	ExceptionManager error = new ExceptionManager(Calendar.getInstance() , HttpStatus.BAD_REQUEST , e.getClass().getCanonicalName() , e.getMessage());
+	return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
+}
 }
 
 
