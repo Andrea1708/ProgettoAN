@@ -6,9 +6,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
+import java.util.HashMap;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import OProject.ANSpringBootApp.Exception.ExceptionManager;
 import OProject.ANSpringBootApp.Exception.Exception_Err;
-import OProject.ANSpringBootApp.Exception.IncorrectOrder;
 import OProject.ANSpringBootApp.Exception.NoCountry;
 import OProject.ANSpringBootApp.Exception.NoDate;
 import OProject.ANSpringBootApp.JSON.JsonParser;
@@ -27,6 +27,7 @@ import OProject.ANSpringBootApp.JSON.JsonProcessing;
 import OProject.ANSpringBootApp.JSON.SlugManagement;
 import OProject.ANSpringBootApp.Model.Nation;
 import OProject.ANSpringBootApp.Model.States;
+import OProject.ANSpringBootApp.Service.StatsService;
 import OProject.ANSpringBootApp.Util.FilterJolly;
 import OProject.ANSpringBootApp.Util.FilterPeriod;
 
@@ -37,9 +38,9 @@ public class Controller {
 	
 	/**
 	 * management of the route "/countries" that return the dataset
-	 * @Param Country nome del paese
-	 * @Param Slug    nome da inserire nel rest 
-	 * @Param ISO2    codice di ogni paese
+	 * @Param Country country's name
+	 * @Param Slug    name to write in the rest
+	 * @Param ISO2    cod of each country
 	 */
 @RequestMapping(value="/countries", method = RequestMethod.GET)
 public ArrayList<States> getallcountries() 
@@ -94,34 +95,36 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letter") char Letter)
 	 */
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
 public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From,
-								@RequestParam(name="To") String To) throws ParseException
+						@RequestParam(name="To") String To) throws ParseException
 {
 
 ArrayList<Nation> dv = new ArrayList<Nation>();
 if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-12T00:00:00Z"))))
 	&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-07T00:00:00Z")))))
+{
 	
-	{
-		if(FilterPeriod.datemenagement(To).after(FilterPeriod.datemenagement(From)))
-			{
-					JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv,From,To);
+	JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv,From,To);
 				
-			} else throw new IncorrectOrder();
-	}else throw new NoDate();
+}else throw new NoDate();
 	
 	return dv;
 }
 	/**
-	 * management of the stats that return max, min, media, dev standard, var  of the specific Nation's dates
+	 * management of the stats that return max, minimum, media, dev standard, variance  of the specific Nation's dates
 	 */
 
-/**@RequestMapping(value = "/stats",  method = RequestMethod.GET)
-public ResponseEntity<Object> getStats(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="stats") List<String> stats) throws NoSuchMethodException, InvocationTargetException
+@RequestMapping(value = "/stats",  method = RequestMethod.POST)
+public HashMap<String,Number> getStats(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="Statics") ArrayList<String> stats) throws NoSuchMethodException, InvocationTargetException
 {
-	
-	
+		ArrayList<Nation> sn = new ArrayList<Nation>();
+		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true) 
+		{
+		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), sn);
+		} else throw new NoCountry();
+		
+		return StatsService.calculate(sn, stats) ;
 }
-**/
+
 
 
 @ExceptionHandler(Exception_Err.class)
@@ -129,6 +132,7 @@ public ResponseEntity<Object> handleE_Project(Exception_Err e) {
 	ExceptionManager error = new ExceptionManager(Calendar.getInstance() , HttpStatus.BAD_REQUEST , e.getClass().getCanonicalName() , e.getMessage());
 	return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
 }
+
 }
 
 

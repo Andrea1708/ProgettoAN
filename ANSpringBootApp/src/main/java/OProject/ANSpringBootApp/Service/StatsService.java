@@ -2,6 +2,7 @@ package OProject.ANSpringBootApp.Service;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,12 +17,12 @@ public class StatsService {
 	 */
 	
 
-	public static HashMap<String, Number> calculate (List<Nation> lf ,List<String> stats) throws NoSuchMethodException, InvocationTargetException {
+	public static HashMap<String, Number> calculate (ArrayList<Nation> lf ,ArrayList<String> stats) throws NoSuchMethodException, InvocationTargetException {
 
 		//HashMap in cui inserire i valori delle statistiche richieste
 		HashMap<String, Number> statistiche = new HashMap<String, Number>(); 
 
-		statistiche.put("Casi confermati: ", lf.size());
+		statistiche.put("Totale Casi confermati: ", lf.size());
 		
 		//la classe in cui sono contenuti i metodi per il calcolo delle statistiche
 		Stats f = new Stats(); 
@@ -33,7 +34,7 @@ public class StatsService {
 			
 			try {
 				//definisco il metodo
-				method = f.getClass().getMethod(string1 , List.class);
+				method = f.getClass().getMethod(string1 , ArrayList.class);
 				
 				//inserisco la statistica e il valore calcolato tramite l'invocazione del metodo richiesto
 				statistiche.put(string1 , (Number) method.invoke(f,lf) ); 

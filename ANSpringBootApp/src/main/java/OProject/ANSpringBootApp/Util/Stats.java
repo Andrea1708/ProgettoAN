@@ -1,44 +1,43 @@
 package OProject.ANSpringBootApp.Util;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 import OProject.ANSpringBootApp.Model.Nation;
 
 public class Stats {
 	
-	private static List<String> allStats = new ArrayList<String>();
-
-	// costruttore di Stats
+	private static ArrayList<String> allStats = new ArrayList<String>();
 
 
 	public Stats()
 	{
-		 allStats.add("media"); allStats.add("min"); allStats.add("max"); allStats.add("devStd"); allStats.add("var");
+		
+		allStats.add("media"); allStats.add("min"); allStats.add("max"); allStats.add("devStd"); allStats.add("var");
 	}
 
 	/**
-	 * Metodo per calcolare la media dei casi confermati
+	 * Method to calculate the media of the confirmed's cases
 	 */
 
-	public static float media(List<Nation> lf)
+	public static float media(ArrayList<Nation> lf)
 	{
 		float media=0;
-		int sum=0;
+		int somma=0;
 		for(Nation f : lf)
 		{
 			Integer numero1 = f.getConfirmed();
-			sum+= numero1;
+			somma+= numero1;
 		}
-		media = (float)sum/lf.size(); 
+		media = (float)somma/lf.size(); 
 		return media;
 	}
 
 	/**
-	 * Metodo per calcolare il numero massimo di casi confermati
+	 * Method to calculate the max of the confirmed's cases
 	 */
 
-	public static int max(List<Nation> lf)
+	public static int max(ArrayList<Nation> lf)
 	{
 		int max=0;
 		for(Nation f : lf)
@@ -51,10 +50,10 @@ public class Stats {
 	}
 
 	/**
-	 * Metodo per calcolare il numero minimo di casi confermati
+	 * Method to calculate the minimum of the confirmed's cases
 	 */
 
-	public static int min(List<Nation> lf)
+	public static int min(ArrayList<Nation> lf)
 	{
 		int min=0;
 		for(Nation f : lf)
@@ -66,10 +65,10 @@ public class Stats {
 	}
 
 	/**
-     * Metodo per calcolare la varianza sul numero dei casi confermati
+     * Method to calculate the variance of the confirmed's cases
      */
 
-    public static double var(List<Nation> lista) {
+    public static double var(ArrayList<Nation> lista) {
         double media = media(lista);
         double varianza = 0;
         for (Nation f : lista) {
@@ -79,10 +78,10 @@ public class Stats {
     }
 
 	 /**
-     * Metodo per calcolare la deviazione standard sul numero dei casi confermati
+     * Method to calculate the dev standard of the confirmed's cases
      */
 
-    public static double devStd(List<Nation> lista) {
+    public static double devStd(ArrayList<Nation> lista) {
         return Math.sqrt(var(lista));
     }
 }
