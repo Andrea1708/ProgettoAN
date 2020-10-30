@@ -46,17 +46,18 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
 
 
-![Diagramma delle Classi Packages (1)](https://user-images.githubusercontent.com/72570036/97051376-5bcb1d80-157f-11eb-9cd2-c9ca34e52b4b.png)
+![Diagramma delle Classi ](https://user-images.githubusercontent.com/72570036/97728135-78141080-1ad1-11eb-873f-ff25c24aa0a1.png)
+
 
 
 
 #### package OProject.ANSpringBootApp;
 
-![Diagramma delle Classi Util (1)](https://user-images.githubusercontent.com/72570036/97051084-d6e00400-157e-11eb-961d-c12e40f5aad9.png)
+![Diagramma delle classi sprigbootApplication](https://user-images.githubusercontent.com/72570036/97729847-659ad680-1ad3-11eb-890e-3bd4fd82a418.png)
 
 #### package OProject.ANSpringBootApp.Controller;
 
-![Diagramma delle Classi Controller](https://user-images.githubusercontent.com/72570036/97040664-8e204f00-156e-11eb-97ea-1d52570dd74f.png)
+![Diagramma delle Classi Controller (1)](https://user-images.githubusercontent.com/72570036/97728195-89f5b380-1ad1-11eb-8a82-7ba108054d8d.png)
 
 #### package OProject.ANSpringBootApp.Model;
 
@@ -64,15 +65,21 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 #### package OProject.ANSpringBootApp.Service;
 
-![Diagramma delle Classi Service](https://user-images.githubusercontent.com/72570036/97039954-8f04b100-156d-11eb-89bf-e55433512609.png)
+![Diagramma delle Classi Service (1)](https://user-images.githubusercontent.com/72570036/97729108-a1816c00-1ad2-11eb-9194-816b5469bedb.png)
+
+#### package OProject.ANSpringBootApp.Util;
+
+![Diagramma delle Classi Util (2)](https://user-images.githubusercontent.com/72570036/97728663-1d2ee900-1ad2-11eb-9cc1-91ff37c69c1e.png)
 
 #### package OProject.ANSpringBootApp.Exception;
 
-![Diagramma delle Classi Exception](https://user-images.githubusercontent.com/72570036/97039786-44833480-156d-11eb-85f5-fb06a7f4c06e.png)
+![Diagramma delle Classi Exception 2](https://user-images.githubusercontent.com/72570036/97728433-d640f380-1ad1-11eb-9ef6-245a7e81bdba.png)
+
+![Diagramma delle Classi Exception 1 ](https://user-images.githubusercontent.com/72570036/97728439-d6d98a00-1ad1-11eb-935e-260b3657f75d.png)
 
 #### package OProject.ANSpringBootApp.JSON;
 
-![Diagramma delle Classi JSON (2)](https://user-images.githubusercontent.com/72570036/97051063-cb8cd880-157e-11eb-85e9-28537885cf31.png)
+![Diagramma delle Classi JSON (3)](https://user-images.githubusercontent.com/72570036/97728485-e8bb2d00-1ad1-11eb-8b07-148d37d7ba5c.png)
 
 ## DIAGRAMMA DELLE SEQUENZE
 
@@ -84,11 +91,20 @@ Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
 
 #### getlivecountryslug
 
-![Diagramma in Sequenza Chiamata2 (1)](https://user-images.githubusercontent.com/72570036/97055950-1eb75900-1588-11eb-9688-4364c830f52f.png)
+![Diagramma in sequenza chiamata 2](https://user-images.githubusercontent.com/72570036/97729692-3d12dc80-1ad3-11eb-8107-2029a2983c8d.png)
 
 #### getlivecountrydate
 
-![Diagramma in Sequenza Chiamata3 (1)](https://user-images.githubusercontent.com/72570036/97055951-1f4fef80-1588-11eb-8580-2a79d13ad6d9.png)
+![Diagramma in sequenza chiamata 3](https://user-images.githubusercontent.com/72570036/97729693-3d12dc80-1ad3-11eb-854e-a36d73e30235.png)
+
+#### get
+
+![Diagramma in sequenza chiamata 4](https://user-images.githubusercontent.com/72570036/97729681-3be1af80-1ad3-11eb-95e0-e8a6a903f2b8.png)
+
+#### get
+
+![Diagramma in sequenza chiamata 5](https://user-images.githubusercontent.com/72570036/97729690-3c7a4600-1ad3-11eb-942e-3d2a5c24940c.png)
+
 
 ## SOFTWARE UTILIZZATI
 
