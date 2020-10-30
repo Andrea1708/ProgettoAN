@@ -17,10 +17,13 @@ Il sistema di ricerca si serve dell'API reference per effettuare il download del
 Dopo aver avviato l'applicazione, sarà possibile interrogarla attraverso un API testing, ad esempio POSTMAN, all'indirizzo http://localhost:8080.
 L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte distinte:
 
-ROTTA  | TIPO | DESCRIZIONE
-------------- | ------------- | --------------
-/countries | GET  | dati riconoscitivi delle nazioni
-/info | POST | dati di una sola nazione
+ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
+------------- | ------------- | -------------- | -----------
+/countries | GET |      |dati riconoscitivi delle nazioni
+/info | POST |      | dati di una sola nazione
+/char | POST |      | dati delle nazioni che iniziano con la lettera inserita dall'utente
+/period | POST |      | dati delle nazioni in un determinato periodo selezionato dall'utente inserendo due date
+/stats | POST |      | dati riguardo al calcolo di una tra media max min devStd e var
 
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
