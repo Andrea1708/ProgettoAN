@@ -7,7 +7,12 @@ import java.util.Date;
 
 public class FilterPeriod {
 
-	
+/**
+ * Method that convert the type of the input in the type Date
+ * @param data
+ * @return Date
+ * @throws ParseException
+ */
 	
 public static Date datemenagement (String data) throws ParseException 
 	{

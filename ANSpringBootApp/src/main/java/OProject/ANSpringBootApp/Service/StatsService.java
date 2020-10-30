@@ -13,47 +13,40 @@ public class StatsService {
 	
 	
 	/**
-	 * Metodo che calcola le statistiche
+	 * Creating an Hashmap, inserting in it the stats and their values
+	 * @param listnation
+	 * @param mystats
+	 * @return Hashmap
+	 * @throws NoSuchMethodException
+	 * @throws InvocationTargetException
 	 */
 	
 
-	public static HashMap<String, Number> calculate (ArrayList<Nation> lf ,ArrayList<String> stats) 
+public static HashMap<String, Number> statsmanager (ArrayList<Nation> listnation ,ArrayList<String> mystats) 
 			throws NoSuchMethodException, InvocationTargetException {
 
-		//HashMap in cui inserire i valori delle statistiche richieste
-		HashMap<String, Number> statistiche = new HashMap<String, Number>(); 
-
-		statistiche.put("Totale Casi", lf.size());
-		
-		//la classe in cui sono contenuti i metodi per il calcolo delle statistiche
-		Stats f = new Stats(); 
-		
-		//itero su tutte le statistiche richieste
-		for(String string1 : stats ) 
+	HashMap<String, Number> infostats = new HashMap<String, Number>(); 
+	infostats.put("All Cases", listnation.size());
+	Stats f = new Stats(); 
+		for(String string1 : mystats ) 
 		{
 			Method method = null;
-			
 			try {
-				//definisco il metodo
 				method = f.getClass().getMethod(string1 , ArrayList.class);
-				
-				//inserisco la statistica e il valore calcolato tramite l'invocazione del metodo richiesto
-				statistiche.put(string1 , (Number) method.invoke(f,lf) ); 
-			} catch (SecurityException e) {
-
-				e.printStackTrace();
-				
-			} catch (IllegalAccessException e) {
-
-				e.printStackTrace();
-				
-			} catch (IllegalArgumentException e) {
+				infostats.put(string1 , (Number) method.invoke(f,listnation) ); 
+				} catch (SecurityException e) {
+					
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
 
 				e.printStackTrace();
 			}
 		}
 
-		return statistiche;
+		return infostats;
 	}
 
 

@@ -11,8 +11,13 @@ import OProject.ANSpringBootApp.Model.States;
 import OProject.ANSpringBootApp.Util.FilterPeriod;
 
 public class JsonParser {
+	/**
+	 * Method that convert an input file json in a ArrayList<States>
+	 * @param jsonArr
+	 * @param list
+	 */
 	
-public static void Parsing (JSONArray jsonArr, ArrayList<States> list){				
+public static void parsing (JSONArray jsonArr, ArrayList<States> list){				
 	
 	for(Object a : jsonArr)
 	
@@ -27,9 +32,14 @@ public static void Parsing (JSONArray jsonArr, ArrayList<States> list){
 	}
 
 }
+	/**
+	 * Method that convert an input file json in a ArrayList<States>
+	 * @param jsonArr2
+	 * @param list
+	 */
 
 
-public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
+public static void parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){				
 
 	for(Object b :jsonArr2)
 	
@@ -50,8 +60,16 @@ public static void Parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 		list.add(objnum);
 	}
 }
+	/**
+	 * Method that check the correct data's input and convert an input file json in a ArrayList<Nation> 
+	 * @param jsonData
+	 * @param list
+	 * @param datainizio
+	 * @param datafine
+	 * @throws ParseException
+	 */
 
-public static void ParsingData(JSONArray jsonData, ArrayList<Nation> list, String datainizio, String datafine) throws ParseException {
+public static void parsingdata(JSONArray jsonData, ArrayList<Nation> list, String datainizio, String datafine) throws ParseException {
 	for(Object c: jsonData)
 	{
 		Nation obj = new Nation();
@@ -75,11 +93,5 @@ public static void ParsingData(JSONArray jsonData, ArrayList<Nation> list, Strin
 		}
 	}
 }
-
-
-
-
-
-
 
 }

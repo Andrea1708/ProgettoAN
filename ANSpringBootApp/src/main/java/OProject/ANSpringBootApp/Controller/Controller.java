@@ -46,7 +46,7 @@ public class Controller {
 public ArrayList<States> getallcountries() 
 {
 		ArrayList<States> Nomi = new ArrayList<States>();
-		JsonParser.Parsing(JsonProcessing.readURL(),Nomi);
+		JsonParser.parsing(JsonProcessing.readURL(),Nomi);
 		return Nomi;
 		
 		
@@ -59,32 +59,31 @@ public ArrayList<States> getallcountries()
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
 	{	ArrayList<Nation> PaeseSelezionato = new ArrayList<Nation>();
-		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true) 
+		if(SlugManagement.slugcheck(Slug, SlugManagement.slugtake(JsonProcessing.readURL())) == true) 
 		{
-		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
+		JsonParser.parsing2(JsonProcessing.readURL2(Slug), PaeseSelezionato);
 		} else throw new NoCountry();
 		return PaeseSelezionato;
 	}
 	
 	/**
 	 * management of the filter that return the nation's list that start with a specific char
-	 * @param Letter
-	 * 
+	 * @param Letter 
 	 */
 @RequestMapping(value = "/char",  method = RequestMethod.POST)
 public ArrayList<Nation> listcountry(@RequestParam(name="Letters") String Letters) 
 {
+	
 	ArrayList<String> fj = new ArrayList<String>();
 	ArrayList<Nation> na = new ArrayList<Nation>();
 	fj = FilterJolly.jollyletter(Letters);
 	for(int i=0; i < fj.size(); i++) {
 		
-		JsonParser.Parsing2(JsonProcessing.readURL2(fj.get(i)),na);
+		JsonParser.parsing2(JsonProcessing.readURL2(fj.get(i)),na);
 		
-		}
-				
-	
-	return na;
+	} 
+		
+return na;
 
 }
 	/**
@@ -95,7 +94,6 @@ public ArrayList<Nation> listcountry(@RequestParam(name="Letters") String Letter
 	 * @param to 
 	 * @throws ParseException that work when the user make mistake in the data writing
 	 * @throws NoData is an exception that is triggered when we don't enter a date that belongs to our ranking
-	 * @throws IncorrectOrdere in an exception that is triggered when we don't enter the dates in the correct order
 	 */
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
 public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From,
@@ -106,15 +104,20 @@ ArrayList<Nation> dv = new ArrayList<Nation>();
 if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-04-12T00:00:00Z"))))
 	&&((FilterPeriod.datemenagement(To).before(FilterPeriod.datemenagement("2020-05-07T00:00:00Z")))))
 {
+	if(SlugManagement.slugcheck(Slug, SlugManagement.slugtake(JsonProcessing.readURL())) == true) 
+	{
+		JsonParser.parsingdata(JsonProcessing.readURL2(Slug),dv,From,To);
+	} else throw new NoCountry();
 	
-	JsonParser.ParsingData(JsonProcessing.readURL2(Slug),dv,From,To);
-				
 }else throw new NoDate();
 	
 	return dv;
 }
 	/**
 	 * management of the stats that return max, minimum, media, dev standard, variance  of the specific Nation's dates
+	 * @param Slug  
+	 * @param Statics stats that we wont calculate.
+	 * @throws NoCountry Exception that works when the user write a country that dosen't exist in our list.
 	 */
 
 @RequestMapping(value = "/stats",  method = RequestMethod.POST)
@@ -122,15 +125,18 @@ public HashMap<String,Number> getstatics(@RequestParam (name ="Slug") String Slu
 					throws NoSuchMethodException, InvocationTargetException
 {
 		ArrayList<Nation> sn = new ArrayList<Nation>();
-		if(SlugManagement.SlugCheck(Slug, SlugManagement.SlugTake(JsonProcessing.readURL())) == true) 
+		if(SlugManagement.slugcheck(Slug, SlugManagement.slugtake(JsonProcessing.readURL())) == true) 
 		{
-		JsonParser.Parsing2(JsonProcessing.readURL2(Slug), sn);
+		JsonParser.parsing2(JsonProcessing.readURL2(Slug), sn);
 		} else throw new NoCountry();
 		
-		return StatsService.calculate(sn, stats) ;
+		return StatsService.statsmanager(sn, stats) ;
 }
 
-
+	/**
+	 * Method that triggers an exception on Postman
+	 * @param e
+	 */
 
 @ExceptionHandler(Exception_Err.class)
 public ResponseEntity<Object> handler(Exception_Err e) {

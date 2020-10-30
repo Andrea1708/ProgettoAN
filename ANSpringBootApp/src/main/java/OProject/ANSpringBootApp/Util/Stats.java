@@ -21,77 +21,91 @@ public class Stats {
 	}
 
 	/**
-	 * Method to calculate the media of the confirmed's cases
+	 * Method that calculate the media of the confirmed's cases
+	 * @param ln
+	 * @return float
 	 */
 
-	public static float mediaConfirmed(ArrayList<Nation> lf)
+	public static float mediaConfirmed(ArrayList<Nation> ln)
 	{
 		float media=0;
 		int somma=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getConfirmed();
+			Integer numero1 = nation.getConfirmed();
 			somma+= numero1;
 		}
-		media = (float)somma/lf.size(); 
+		media = (float)somma/ln.size(); 
 		return media;
 	}
+	
 	/**
-	 * Method to calculate the media of the active's cases
+	 * Method that calculate the media of the active's cases
+	 * @param ln
+	 * @return float
 	 */
 	
-	public static float mediaActive(ArrayList<Nation> lf)
+	public static float mediaActive(ArrayList<Nation> ln)
 	{
 		float media=0;
 		int somma=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getActive();
+			Integer numero1 = nation.getActive();
 			somma+= numero1;
 		}
-		media = (float)somma/lf.size(); 
+		media = (float)somma/ln.size(); 
 		return media;
 	}
+	
 	/**
-	 *  Method to calculate the media of the deaths's cases 
+	 * Method that calculate the media of the deaths's cases 
+	 * @param ln
+	 * @return float
 	 */
-	public static float mediaDeaths(ArrayList<Nation> lf)
+	public static float mediaDeaths(ArrayList<Nation> ln)
 	{
 		float media=0;
 		int somma=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getDeaths();
+			Integer numero1 = nation.getDeaths();
 			somma+= numero1;
 		}
-		media = (float)somma/lf.size(); 
+		media = (float)somma/ln.size(); 
 		return media;
 	}
+	
 	/**
-	 *  Method to calculate the media of the recovered's cases
+	 * Method that calculate the media of the recovered's cases
+	 * @param ln
+	 * @return float
 	 */
-	public static float mediaRecovered(ArrayList<Nation> lf)
+	public static float mediaRecovered(ArrayList<Nation> ln)
 	{
 		float media=0;
 		int somma=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getRecovered();
+			Integer numero1 = nation.getRecovered();
 			somma+= numero1;
 		}
-		media = (float)somma/lf.size(); 
+		media = (float)somma/ln.size(); 
 		return media;
 	}
+	
 	/**
-	 * Method to calculate the max of the confirmed's cases
+	 * Method that calculate the max of the confirmed's cases
+	 * @param ln
+	 * @return int
 	 */
 
-	public static int maxConfirmed(ArrayList<Nation> lf)
+	public static int maxConfirmed(ArrayList<Nation> ln)
 	{
 		int max=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getConfirmed();
+			Integer numero1 = nation.getConfirmed();
 			if( numero1 > max ) max = numero1;
 		}
 
@@ -99,15 +113,17 @@ public class Stats {
 	}
 	
 	/**
-	 * Method to calculate the max of the active's cases
+	 * Method that calculate the max of the active's cases
+	 * @param ln
+	 * @return int 
 	 */
 
-	public static int maxActive(ArrayList<Nation> lf)
+	public static int maxActive(ArrayList<Nation> ln)
 	{
 		int max=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getActive();
+			Integer numero1 = nation.getActive();
 			if( numero1 > max ) max = numero1;
 		}
 
@@ -115,15 +131,17 @@ public class Stats {
 	}
 	
 	/**
-	 * Method to calculate the max of the recovered's cases
+	 * Method that calculate the max of the recovered's cases
+	 * @param ln
+	 * @return int
 	 */
 
-	public static int maxRecovered(ArrayList<Nation> lf)
+	public static int maxRecovered(ArrayList<Nation> ln)
 	{
 		int max=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getRecovered();
+			Integer numero1 = nation.getRecovered();
 			if( numero1 > max ) max = numero1;
 		}
 
@@ -131,15 +149,17 @@ public class Stats {
 	}
 	
 	/**
-	 * Method to calculate the max of the death's cases
+	 * Method that calculate the max of the death's cases
+	 * @param ln
+	 * @return int 
 	 */
 
-	public static int maxDeaths(ArrayList<Nation> lf)
+	public static int maxDeaths(ArrayList<Nation> ln)
 	{
 		int max=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getDeaths();
+			Integer numero1 = nation.getDeaths();
 			if( numero1 > max ) max = numero1;
 		}
 
@@ -147,145 +167,170 @@ public class Stats {
 	}
 
 	/**
-	 * Method to calculate the minimum of the confirmed's cases
+	 * Method that calculate the minimum of the confirmed's cases
+	 * @param ln
+	 * @return int 
 	 */
 
-	public static int minConfirmed(ArrayList<Nation> lf)
+	public static int minConfirmed(ArrayList<Nation> ln)
 	{
 		int min=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getConfirmed();
+			Integer numero1 = nation.getConfirmed();
 			if( numero1 < min ) min = numero1;
 		}
 		return min;
 	}
 	
 	/**
-	 * Method to calculate the minimum of the active's cases
+	 * Method that calculate the minimum of the active's cases
+	 * @param ln
+	 * @return int
 	 */
 
-	public static int minActive(ArrayList<Nation> lf)
+	public static int minActive(ArrayList<Nation> ln)
 	{
 		int min=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getActive();
+			Integer numero1 = nation.getActive();
 			if( numero1 < min ) min = numero1;
 		}
 		return min;
 	}
 	
 	/**
-	 * Method to calculate the minimum of the death's cases
+	 * Method that calculate the minimum of the death's cases
+	 * @param ln
+	 * @return int
 	 */
 
-	public static int minDeaths(ArrayList<Nation> lf)
+	public static int minDeaths(ArrayList<Nation> ln)
 	{
 		int min=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getDeaths();
+			Integer numero1 = nation.getDeaths();
 			if( numero1 < min ) min = numero1;
 		}
 		return min;
 	}
 	
 	/**
-	 * Method to calculate the minimum of the recovered's cases
+	 * Method that calculate the minimum of the recovered's cases
+	 * @param ln
+	 * @return int
 	 */
 
-	public static int minRecovered(ArrayList<Nation> lf)
+	public static int minRecovered(ArrayList<Nation> ln)
 	{
 		int min=0;
-		for(Nation f : lf)
+		for(Nation nation : ln)
 		{
-			Integer numero1 = f.getRecovered();
+			Integer numero1 = nation.getRecovered();
 			if( numero1 < min ) min = numero1;
 		}
 		return min;
 	}
+
 	/**
-     * Method to calculate the variance of the confirmed's cases
-     */
+	 * Method that calculate the variance of the confirmed's cases
+	 * @param mylist
+	 * @return double
+	 */
 
-    public static double varConfirmed(ArrayList<Nation> lista) {
-        double media = mediaConfirmed(lista);
+    public static double varConfirmed(ArrayList<Nation> mylist) {
+        double media = mediaConfirmed(mylist);
         double varianza = 0;
-        for (Nation f : lista) {
-            varianza += Math.pow(f.getConfirmed() - media, 2);
+        for (Nation nation : mylist) {
+            varianza += Math.pow(nation.getConfirmed() - media, 2);
+        }
+        return varianza;
+    }
+    
+   /**
+    * Method that calculate the variance of the active's cases
+    * @param mylist
+    * @return double 
+    */
+
+    public static double varActive(ArrayList<Nation> mylist) {
+        double media = mediaActive(mylist);
+        double varianza = 0;
+        for (Nation nation : mylist) {
+            varianza += Math.pow(nation.getConfirmed() - media, 2);
         }
         return varianza;
     }
     
     /**
-     * Method to calculate the variance of the active's cases
+     * Method that calculate the variance of the deaths's cases
+     * @param mylist
+     * @return double
      */
 
-    public static double varActive(ArrayList<Nation> lista) {
-        double media = mediaActive(lista);
+    public static double varDeaths(ArrayList<Nation> mylist) {
+        double media = mediaDeaths(mylist);
         double varianza = 0;
-        for (Nation f : lista) {
-            varianza += Math.pow(f.getConfirmed() - media, 2);
+        for (Nation nation : mylist) {
+            varianza += Math.pow(nation.getConfirmed() - media, 2);
         }
         return varianza;
     }
     
     /**
-     * Method to calculate the variance of the deaths's cases
+     * Method that calculate the variance of the recovered's cases
+     * @param mylist
+     * @return double
      */
 
-    public static double varDeaths(ArrayList<Nation> lista) {
-        double media = mediaDeaths(lista);
+    public static double varRecovered(ArrayList<Nation> mylist) {
+        double media = mediaRecovered(mylist);
         double varianza = 0;
-        for (Nation f : lista) {
-            varianza += Math.pow(f.getConfirmed() - media, 2);
-        }
-        return varianza;
-    }
-    
-    /**
-     * Method to calculate the variance of the recovered's cases
-     */
-
-    public static double varRecovered(ArrayList<Nation> lista) {
-        double media = mediaRecovered(lista);
-        double varianza = 0;
-        for (Nation f : lista) {
-            varianza += Math.pow(f.getConfirmed() - media, 2);
+        for (Nation nation : mylist) {
+            varianza += Math.pow(nation.getConfirmed() - media, 2);
         }
         return varianza;
     }
 
-	 /**
-     * Method to calculate the dev standard of the confirmed's cases
-     */
+	/**
+	 * Method that calculate the dev standard of the confirmed's cases
+	 * @param mylist
+	 * @return double
+	 */
 
-    public static double devStdConfirmed(ArrayList<Nation> lista) {
-        return Math.sqrt(varConfirmed(lista));
+    public static double devStdConfirmed(ArrayList<Nation> mylist) {
+        return Math.sqrt(varConfirmed(mylist));
     }
     
     /**
-     * Method to calculate the dev standard of the active's cases
+     * Method that calculate the dev standard of the active's cases
+     * @param mylist
+     * @return double
      */
 
-    public static double devStdActive(ArrayList<Nation> lista) {
-        return Math.sqrt(varActive(lista));
+    public static double devStdActive(ArrayList<Nation> mylist) {
+        return Math.sqrt(varActive(mylist));
     }
     
     /**
-     * Method to calculate the dev standard of the deaths's cases
+     * Method that calculate the dev standard of the deaths's cases
+     * @param mylist
+     * @return double
      */
 
-    public static double devStdDeaths(ArrayList<Nation> lista) {
-        return Math.sqrt(varDeaths(lista));
+    public static double devStdDeaths(ArrayList<Nation> mylist) {
+        return Math.sqrt(varDeaths(mylist));
     }
     
     /**
-     * Method to calculate the dev standard of the recovered's cases
+     * Method that calculate the dev standard of the recovered's cases
+     * @param mylist
+     * @return double
      */
 
-    public static double devStdRecovered(ArrayList<Nation> lista) {
-        return Math.sqrt(varRecovered(lista));
+    public static double devStdRecovered(ArrayList<Nation> mylist) {
+        return Math.sqrt(varRecovered(mylist));
     }
 }

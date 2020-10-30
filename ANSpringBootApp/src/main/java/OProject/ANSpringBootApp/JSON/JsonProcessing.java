@@ -10,6 +10,11 @@ import org.json.JSONArray;
 import OProject.ANSpringBootApp.Service.URLservice;
 
 public class JsonProcessing {
+	
+	/**
+	 * Method that download information from a API's URL
+	 * @return JSONArray
+	 */
 
 public static JSONArray readURL()  {
 	String inline = "";
@@ -33,6 +38,11 @@ public static JSONArray readURL()  {
 		return null;
 		} 
 
+	/**
+	 * Method that download information from a specific URL
+	 * @param CN
+	 * @return JSONArray
+	 */
 
 public static JSONArray readURL2(String CN)  {
 	String inline = "";

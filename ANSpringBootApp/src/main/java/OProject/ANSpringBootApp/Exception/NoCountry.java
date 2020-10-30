@@ -7,7 +7,6 @@ public class NoCountry extends Exception_Err {
 
 		/**
 		 * get the exception message.
-		 *
 		 * @return String
 		 */
 		@Override

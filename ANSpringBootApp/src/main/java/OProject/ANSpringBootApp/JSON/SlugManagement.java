@@ -7,8 +7,12 @@ import org.json.JSONException;
 
 public class SlugManagement {
 	
-
-public static ArrayList<String> SlugTake(JSONArray jsonArr){
+	/**
+	 * Method that takes the State's attribute "Slug" and add it into an ArrayList<String>
+	 * @param jsonArr
+	 * @return ArrayList<String>
+	 */
+public static ArrayList<String> slugtake(JSONArray jsonArr){
 			ArrayList<String> roster = new ArrayList<String>();
 			if(jsonArr!= null) {
 				for(int i=0; i< jsonArr.length(); i++) {
@@ -23,9 +27,14 @@ public static ArrayList<String> SlugTake(JSONArray jsonArr){
 			
 			return roster;
 		}
-		
-	public static boolean SlugCheck(String Line, ArrayList<String> roster) {
-		roster = SlugManagement.SlugTake(JsonProcessing.readURL());
+	
+	/**
+	 * Method that checks if the inserted Slug exists
+	 * @param Line
+	 * @param roster
+	 */
+	public static boolean slugcheck(String Line, ArrayList<String> roster) {
+		roster = SlugManagement.slugtake(JsonProcessing.readURL());
 		for (int i = 0; i < roster.size(); i++) {
 			if (Line.equals(roster.get(i))) {
 				System.out.println("Il Paese selezionato esiste");
