@@ -30,6 +30,12 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 - /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
 
+- /CHAR:
+
+- /PERIOD:
+
+- /STATS:
+
 #### FILTRI
 
 - metadata di un paese selezionato contenente i dati sopracitati riferiti ad una specifica nazione richiesta dall'utente.
