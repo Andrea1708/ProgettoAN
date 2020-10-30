@@ -22,7 +22,7 @@ public class Stats {
 
 	/**
 	 * Method that calculate the media of the confirmed's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return float
 	 */
 
@@ -41,7 +41,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the media of the active's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return float
 	 */
 	
@@ -60,7 +60,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the media of the deaths's cases 
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return float
 	 */
 	public static float mediaDeaths(ArrayList<Nation> ln)
@@ -78,7 +78,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the media of the recovered's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return float
 	 */
 	public static float mediaRecovered(ArrayList<Nation> ln)
@@ -96,7 +96,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the max of the confirmed's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int
 	 */
 
@@ -114,7 +114,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the max of the active's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int 
 	 */
 
@@ -132,7 +132,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the max of the recovered's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int
 	 */
 
@@ -150,7 +150,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the max of the death's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int 
 	 */
 
@@ -168,7 +168,7 @@ public class Stats {
 
 	/**
 	 * Method that calculate the minimum of the confirmed's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int 
 	 */
 
@@ -185,7 +185,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the minimum of the active's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int
 	 */
 
@@ -202,7 +202,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the minimum of the death's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int
 	 */
 
@@ -219,7 +219,7 @@ public class Stats {
 	
 	/**
 	 * Method that calculate the minimum of the recovered's cases
-	 * @param ln
+	 * @param ln ArrayList of Nation
 	 * @return int
 	 */
 
@@ -236,7 +236,7 @@ public class Stats {
 
 	/**
 	 * Method that calculate the variance of the confirmed's cases
-	 * @param mylist
+	 * @param mylist ArrayList of Nation
 	 * @return double
 	 */
 
@@ -251,7 +251,7 @@ public class Stats {
     
    /**
     * Method that calculate the variance of the active's cases
-    * @param mylist
+    * @param mylist ArrayList of Nation
     * @return double 
     */
 
@@ -266,7 +266,7 @@ public class Stats {
     
     /**
      * Method that calculate the variance of the deaths's cases
-     * @param mylist
+     * @param mylist ArrayList of Nation
      * @return double
      */
 
@@ -281,7 +281,7 @@ public class Stats {
     
     /**
      * Method that calculate the variance of the recovered's cases
-     * @param mylist
+     * @param mylist ArrayList of Nation
      * @return double
      */
 
@@ -296,7 +296,7 @@ public class Stats {
 
 	/**
 	 * Method that calculate the dev standard of the confirmed's cases
-	 * @param mylist
+	 * @param mylist ArrayList of Nation
 	 * @return double
 	 */
 
@@ -306,7 +306,7 @@ public class Stats {
     
     /**
      * Method that calculate the dev standard of the active's cases
-     * @param mylist
+     * @param mylist ArrayList of Nation
      * @return double
      */
 
@@ -316,7 +316,7 @@ public class Stats {
     
     /**
      * Method that calculate the dev standard of the deaths's cases
-     * @param mylist
+     * @param mylist ArrayList of Nation
      * @return double
      */
 
@@ -326,7 +326,7 @@ public class Stats {
     
     /**
      * Method that calculate the dev standard of the recovered's cases
-     * @param mylist
+     * @param mylist ArrayList of Nation
      * @return double
      */
 

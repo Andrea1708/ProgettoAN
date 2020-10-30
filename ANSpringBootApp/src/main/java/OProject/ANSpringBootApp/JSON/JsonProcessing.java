@@ -40,7 +40,7 @@ public static JSONArray readURL()  {
 
 	/**
 	 * Method that download information from a specific URL
-	 * @param CN
+	 * @param CN string that will complete the URL
 	 * @return JSONArray
 	 */
 

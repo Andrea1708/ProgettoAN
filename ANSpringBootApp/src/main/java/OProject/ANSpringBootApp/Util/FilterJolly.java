@@ -12,8 +12,8 @@ public class FilterJolly {
 	
 	/**
 	 * Method that filters the dataset by the letter entered by the user 
-	 * @param LetterChosen
-	 * @return ArrayList<String>
+	 * @param LetterChosen string that that allow the nation's search 
+	 * @return ArrayList of String 
 	 */
 	
 

@@ -9,9 +9,9 @@ public class FilterPeriod {
 
 /**
  * Method that convert the type of the input in the type Date
- * @param data
- * @return Date
- * @throws ParseException
+ * @param data String
+ * @return Date	String after the conversion
+ * @throws ParseException exception generate
  */
 	
 public static Date datemenagement (String data) throws ParseException 

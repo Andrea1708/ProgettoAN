@@ -12,9 +12,9 @@ import OProject.ANSpringBootApp.Util.FilterPeriod;
 
 public class JsonParser {
 	/**
-	 * Method that convert an input file json in a ArrayList<States>
-	 * @param jsonArr
-	 * @param list
+	 * Method that convert an input file json in a ArrayList of States
+	 * @param jsonArr JSONArray that will be convert
+	 * @param list	ArrayList of States
 	 */
 	
 public static void parsing (JSONArray jsonArr, ArrayList<States> list){				
@@ -33,9 +33,9 @@ public static void parsing (JSONArray jsonArr, ArrayList<States> list){
 
 }
 	/**
-	 * Method that convert an input file json in a ArrayList<States>
-	 * @param jsonArr2
-	 * @param list
+	 * Method that convert an input file json in a ArrayList of States
+	 * @param jsonArr2	JSONArray that will be convert
+	 * @param list	ArrayList of Nation
 	 */
 
 
@@ -61,12 +61,12 @@ public static void parsing2 (JSONArray jsonArr2, ArrayList<Nation> list){
 	}
 }
 	/**
-	 * Method that check the correct data's input and convert an input file json in a ArrayList<Nation> 
-	 * @param jsonData
-	 * @param list
-	 * @param datainizio
-	 * @param datafine
-	 * @throws ParseException
+	 * Method that check the correct data's input and convert an input file json in a ArrayList of Nation 
+	 * @param jsonData JSONArray that will be convert
+	 * @param list		ArrayList of Nation
+	 * @param datainizio first date
+	 * @param datafine	second date
+	 * @throws ParseException exception generate
 	 */
 
 public static void parsingdata(JSONArray jsonData, ArrayList<Nation> list, String datainizio, String datafine) throws ParseException {

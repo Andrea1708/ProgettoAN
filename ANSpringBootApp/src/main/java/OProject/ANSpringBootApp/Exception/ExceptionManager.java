@@ -13,10 +13,10 @@ public class ExceptionManager {
 	
 	/**
 	 * ExceptionError Constructor
-	 * @param date
-	 * @param httpStatus
-	 * @param exception
-	 * @param message
+	 * @param date time of the request
+	 * @param httpStatus show the request's status
+	 * @param exception exception generate
+	 * @param message exception's message
 	 */
 	public ExceptionManager(Calendar date, HttpStatus httpStatus, String exception, String message) {
 		super();

@@ -14,11 +14,11 @@ public class StatsService {
 	
 	/**
 	 * Creating an Hashmap, inserting in it the stats and their values
-	 * @param listnation
-	 * @param mystats
-	 * @return Hashmap
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
+	 * @param listnation    ArrayList of Nation
+	 * @param mystats		ArrayList of String
+	 * @return Hashmap of String and Number
+	 * @throws NoSuchMethodException exception generate
+	 * @throws InvocationTargetException exception generate
 	 */
 	
 

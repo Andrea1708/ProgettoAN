@@ -38,9 +38,7 @@ public class Controller {
 	
 	/**
 	 * management of the route "/countries" that return the dataset
-	 * @Param Country country's name
-	 * @Param Slug    name to write in the rest
-	 * @Param ISO2    cod of each country
+	 * @return ArrayList of States
 	 */
 @RequestMapping(value="/countries", method = RequestMethod.GET)
 public ArrayList<States> getallcountries() 
@@ -53,8 +51,9 @@ public ArrayList<States> getallcountries()
 }
 	/**
 	 * management of the route "/info" that return the dataset of a specific state
-	 * @param Slug
+	 * @param Slug is the name of the country entered on Postman
 	 * @throws NoCountry is an exception that works when the user write a country that dosen't exist in our list
+	 * @return ArrayList of Nation 
 	 */
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
@@ -68,7 +67,8 @@ public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug)
 	
 	/**
 	 * management of the filter that return the nation's list that start with a specific char
-	 * @param Letter 
+	 * @param Letters is the string that the user entered
+	 * @return ArrayList of Nation
 	 */
 @RequestMapping(value = "/char",  method = RequestMethod.POST)
 public ArrayList<Nation> listcountry(@RequestParam(name="Letters") String Letters) 
@@ -90,11 +90,13 @@ return na;
 	 * management of the filter that return the nation's values in a specific period
 	 * the period that we can select goes from 2020-04-13 to 2020-05-06 but for the period 
 	 * that goes from 2020-04-29 to 2020-05-03 we haven't the daily report
-	 * @param from
-	 * @param to 
+	 * @param Slug 	is the name of the country entered on Postman
+	 * @param From  first date entered on Postman
+	 * @param To 	second date entered on Postman
 	 * @throws ParseException that work when the user make mistake in the data writing
-	 * @throws NoData is an exception that is triggered when we don't enter a date that belongs to our ranking
+	 * @throws NoDate is an exception that is triggered when we don't enter a date that belongs to our ranking
 	 * @throws NoCountry is an exception that works when the user write a country that dosen't exist in our list
+	 * @return ArrayList of Nation
 	 */
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
 public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From,
@@ -116,13 +118,16 @@ if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-0
 }
 	/**
 	 * management of the stats that return max, minimum, media, dev standard, variance  of the specific Nation's dates
-	 * @param Slug  
+	 * @param Slug  is the name of the country entered on Postman
 	 * @param Statics stats that we wont calculate.
 	 * @throws NoCountry is an exception that works when the user write a country that dosen't exist in our list.
+	 * @throws NoSuchMethodException exception generate
+	 * @throws InvocationTargetException exception generate
+	 * @return Hashmap of String and Number
 	 */
 
 @RequestMapping(value = "/stats",  method = RequestMethod.POST)
-public HashMap<String,Number> getstatics(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="Statics") ArrayList<String> stats) 
+public HashMap<String,Number> getstatics(@RequestParam (name ="Slug") String Slug, @RequestParam (name ="Statics") ArrayList<String> Statics) 
 					throws NoSuchMethodException, InvocationTargetException
 {
 		ArrayList<Nation> sn = new ArrayList<Nation>();
@@ -131,12 +136,13 @@ public HashMap<String,Number> getstatics(@RequestParam (name ="Slug") String Slu
 		JsonParser.parsing2(JsonProcessing.readURL2(Slug), sn);
 		} else throw new NoCountry();
 		
-		return StatsService.statsmanager(sn, stats) ;
+		return StatsService.statsmanager(sn, Statics) ;
 }
 
 	/**
 	 * Method that triggers an exception on Postman
-	 * @param e
+	 * @param e exception to handle
+	 * @return ExceptionManager object
 	 */
 
 @ExceptionHandler(Exception_Err.class)

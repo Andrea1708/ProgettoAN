@@ -8,9 +8,9 @@ import org.json.JSONException;
 public class SlugManagement {
 	
 	/**
-	 * Method that takes the State's attribute "Slug" and add it into an ArrayList<String>
-	 * @param jsonArr
-	 * @return ArrayList<String>
+	 * Method that takes the State's attribute "Slug" and add it into an ArrayList of String
+	 * @param jsonArr JSONArray from which the slugs are taken
+	 * @return ArrayList of String 
 	 */
 public static ArrayList<String> slugtake(JSONArray jsonArr){
 			ArrayList<String> roster = new ArrayList<String>();
@@ -30,8 +30,9 @@ public static ArrayList<String> slugtake(JSONArray jsonArr){
 	
 	/**
 	 * Method that checks if the inserted Slug exists
-	 * @param Line
-	 * @param roster
+	 * @param Line String that will be checked
+	 * @param roster ArrayList of String
+	 * @return true or false 
 	 */
 	public static boolean slugcheck(String Line, ArrayList<String> roster) {
 		roster = SlugManagement.slugtake(JsonProcessing.readURL());
