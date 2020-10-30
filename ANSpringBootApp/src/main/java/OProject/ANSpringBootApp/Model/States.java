@@ -1,6 +1,7 @@
 package OProject.ANSpringBootApp.Model;
 
 public class States {
+	
 		/**
 		 * recognizer of world's nation
 		 */

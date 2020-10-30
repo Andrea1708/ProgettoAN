@@ -1,6 +1,5 @@
 package OProject.ANSpringBootApp.Model;
 
-
 /**
  * It represents the Covid-19's data through the call "/live/country/"
  */
