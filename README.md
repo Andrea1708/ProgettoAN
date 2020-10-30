@@ -36,7 +36,26 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 - /STATS: restituisce in base alla nazione selezionata attraverso lo slug, il calcolo di una tra le seguenti statistiche: media, massimo, minimo, varianza e deviazione standard; su di un qualsiasi dato tra: casi totali, morti, guariti, casi attivi.
 
-#### FILTRI
+#### ESEMPI DI CHIAMATE
+
+* [chiamata /countries](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20countries.png)
+
+* [chiamata /info](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20info.png)
+
+
+
+### FILTRI
+
+* [chiamata /char parte1](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20char%201.png)
+
+* [chiamata /char parte2](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20char%202.png)
+
+* [chiamata /char parte3](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20char%203.png)
+
+* [chiamata /period parte1](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20period%201.png)
+
+* [chiamata /period parte2](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20period%202.png)
+
 
 - metadata di un paese selezionato contenente i dati sopracitati riferiti ad una specifica nazione richiesta dall'utente.
 
@@ -49,7 +68,9 @@ Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metod
 Il metodo **GetURL2( )** come nel caso precedente, va a modificare l'URL predefinita aggiungendo nome della nazione e data scelta, inseriti anche questa volta dall'utente, rendendo cosi tale URL leggibile dal metodo **ReadURL3( )**, il quale richiamerà il metodo **Parsing3( )**; esso svolge il compito di restituire un arraylist contenente i dati relativi al virus Covid-19 dalla data selezionata in poi, della nazione specificata.
 Durante tale processo avviene una verifica sull'inserimento della nazione, nel caso non fosse una nazione esistente nel database, verrà mostrato  un messaggio di errore personalizzato, sempre gestio dalla classe Exception
 
+### STATISTICHE
 
+* [chiamata /stats]
 
 
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
