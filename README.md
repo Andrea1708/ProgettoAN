@@ -85,23 +85,23 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
 
-#### getcountries
+#### getallcountries
 
 ![Diagramma in Sequenza Chiamata1](https://user-images.githubusercontent.com/72570036/97055954-1f4fef80-1588-11eb-882d-391765220545.png)
 
-#### getlivecountryslug
+#### datescountry
 
 ![Diagramma in sequenza chiamata 2](https://user-images.githubusercontent.com/72570036/97730380-11dcbd00-1ad4-11eb-9116-50b9c3ea3cae.png)
 
-#### getlivecountrydate
+#### listcountry
 
 ![Diagramma in sequenza chiamata 3](https://user-images.githubusercontent.com/72570036/97730372-10ab9000-1ad4-11eb-8224-3c1b29190d6a.png)
 
-#### get
+#### valuescountry
 
 ![Diagramma in sequenza chiamata 4](https://user-images.githubusercontent.com/72570036/97730377-11442680-1ad4-11eb-89ec-b4104bd26d66.png)
 
-#### get
+#### getstatics
 
 ![Diagramma in sequenza chiamata 5](https://user-images.githubusercontent.com/72570036/97730378-11442680-1ad4-11eb-9caa-1b134d291a24.png)
 
