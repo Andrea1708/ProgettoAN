@@ -51,7 +51,7 @@ Durante tale processo avviene una verifica sull'inserimento della nazione, nel c
 
 
 
-#### package OProject.ANSpringBootApp;
+#### package OProject.ANSpringBootApplication;
 
 ![Diagramma delle classi sprigbootApplication](https://user-images.githubusercontent.com/72570036/97729847-659ad680-1ad3-11eb-890e-3bd4fd82a418.png)
 
@@ -91,19 +91,19 @@ Diagrammi delle sequenze che dettagliano il funzionamento delle chiamate.
 
 #### getlivecountryslug
 
-![Diagramma in sequenza chiamata 2](https://user-images.githubusercontent.com/72570036/97729692-3d12dc80-1ad3-11eb-8107-2029a2983c8d.png)
+![Diagramma in sequenza chiamata 2](https://user-images.githubusercontent.com/72570036/97730380-11dcbd00-1ad4-11eb-9116-50b9c3ea3cae.png)
 
 #### getlivecountrydate
 
-![Diagramma in sequenza chiamata 3](https://user-images.githubusercontent.com/72570036/97729693-3d12dc80-1ad3-11eb-854e-a36d73e30235.png)
+![Diagramma in sequenza chiamata 3](https://user-images.githubusercontent.com/72570036/97730372-10ab9000-1ad4-11eb-8224-3c1b29190d6a.png)
 
 #### get
 
-![Diagramma in sequenza chiamata 4](https://user-images.githubusercontent.com/72570036/97729681-3be1af80-1ad3-11eb-95e0-e8a6a903f2b8.png)
+![Diagramma in sequenza chiamata 4](https://user-images.githubusercontent.com/72570036/97730377-11442680-1ad4-11eb-89ec-b4104bd26d66.png)
 
 #### get
 
-![Diagramma in sequenza chiamata 5](https://user-images.githubusercontent.com/72570036/97729690-3c7a4600-1ad3-11eb-942e-3d2a5c24940c.png)
+![Diagramma in sequenza chiamata 5](https://user-images.githubusercontent.com/72570036/97730378-11442680-1ad4-11eb-9caa-1b134d291a24.png)
 
 
 ## SOFTWARE UTILIZZATI
