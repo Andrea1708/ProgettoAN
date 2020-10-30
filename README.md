@@ -30,11 +30,11 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 - /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
 
-- /CHAR:
+- /CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
 
-- /PERIOD:
+- /PERIOD: restituisce in base alla nazione selezionata attraverso lo slug, tutti i dati relativi a tale paese all'interno di un periodo specifico impostato dall'utente attraverso l'inserimento di due date valide
 
-- /STATS:
+- /STATS: restituisce in base alla nazione selezionata attraverso lo slug, il calcolo di una tra le seguenti statistiche: media, massimo, minimo, varianza e deviazione standard; su di un qualsiasi dato tra: casi totali, morti, guariti, casi attivi.
 
 #### FILTRI
 
