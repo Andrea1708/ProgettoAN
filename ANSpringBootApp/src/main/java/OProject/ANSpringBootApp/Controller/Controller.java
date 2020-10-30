@@ -54,7 +54,7 @@ public ArrayList<States> getallcountries()
 	/**
 	 * management of the route "/info" that return the dataset of a specific state
 	 * @param Slug
-	 * @throws NoCountry Exception that works when the user write a country that dosen't exist in our list
+	 * @throws NoCountry is an exception that works when the user write a country that dosen't exist in our list
 	 */
 @RequestMapping(value = "/info",  method = RequestMethod.POST)
 public ArrayList<Nation> datescountry(@RequestParam(name="Slug") String Slug) 
@@ -94,6 +94,7 @@ return na;
 	 * @param to 
 	 * @throws ParseException that work when the user make mistake in the data writing
 	 * @throws NoData is an exception that is triggered when we don't enter a date that belongs to our ranking
+	 * @throws NoCountry is an exception that works when the user write a country that dosen't exist in our list
 	 */
 @RequestMapping(value = "/period",  method = RequestMethod.POST)
 public ArrayList<Nation> valuescountry(@RequestParam(name="Slug") String Slug, @RequestParam(name="From") String From,
@@ -117,7 +118,7 @@ if(((FilterPeriod.datemenagement(From).after(FilterPeriod.datemenagement("2020-0
 	 * management of the stats that return max, minimum, media, dev standard, variance  of the specific Nation's dates
 	 * @param Slug  
 	 * @param Statics stats that we wont calculate.
-	 * @throws NoCountry Exception that works when the user write a country that dosen't exist in our list.
+	 * @throws NoCountry is an exception that works when the user write a country that dosen't exist in our list.
 	 */
 
 @RequestMapping(value = "/stats",  method = RequestMethod.POST)
