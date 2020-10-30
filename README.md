@@ -122,7 +122,7 @@ UML Designer - strumento di modellazione grafica
 
 ## NOTE 
 
-Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obittivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
+Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obiettivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
 
 "Ingegneria Informatica e dell'Automazione" - Università Politecnica delle Marche
 
