@@ -20,10 +20,10 @@ L'applicazione permette di richiedere mediante API REST (GET o POST) con rotte d
 ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 ------------- | ------------- | -------------- | -----------
 /countries | GET |      |dati riconoscitivi delle nazioni
-/info | POST |      | dati di una sola nazione
-/char | POST |      | dati delle nazioni che iniziano con la lettera inserita dall'utente
-/period | POST |      | dati delle nazioni in un determinato periodo selezionato dall'utente inserendo due date
-/stats | POST |      | dati riguardo al calcolo di una tra media max min devStd e var
+/info | POST | slug | dati di una sola nazione
+/char | POST | letter | dati delle nazioni che iniziano con la lettera inserita dall'utente
+/period | POST | slug, from, to | dati delle nazioni in un determinato periodo selezionato dall'utente inserendo due date
+/stats | POST | slug, statics | dati riguardo al calcolo di una tra media max min devStd e var
 
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
