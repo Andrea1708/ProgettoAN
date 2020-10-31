@@ -155,7 +155,7 @@ UML Designer - strumento di modellazione grafica
 Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obiettivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
 Le difficoltà che sono emerse durante la programmazione sono state:
 
-- Nella chiamata "/char" nel momento in cui vengono inserite delle lettere (ad esempio "a","b","s"..) alle quali corrispondono più di 10 paesi con quell'iniziale, il server ci ritorna un errore dovuto alla troppa grandezza del file da scaricare, non riuscendo a compensare quest'errore abbiamo fatto si che nel momento in cui la lita dei paesi è maggiore di 10, venga generata un'eccezione che ci informa di inserire un altra lettera.
+- Nella chiamata "/char" nel momento in cui vengono inserite delle lettere (ad esempio "a","b","s"..) alle quali corrispondono più di 10 paesi, il server ritorna un errore dovuto all'eccessiva dimensione del file da scaricare, non riuscendo a compensare quest'errore abbiamo fatto si che nel momento in cui la lista dei paesi è maggiore di 10, venga generata un'eccezione che ci informa di inserire un' altra lettera.
   
 "Ingegneria Informatica e dell'Automazione" - Università Politecnica delle Marche
 
