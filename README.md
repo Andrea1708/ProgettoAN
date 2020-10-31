@@ -88,13 +88,13 @@ var      = la varianza.
 
 #### ESEMPI DI CHIAMATE /STATS:
 
-* [chiamata /stats Casi confermati](![Esempio chiamata statistiche Confirmed](https://user-images.githubusercontent.com/72570036/97776460-7fd2c400-1b68-11eb-9831-c37d38eae4f7.png))
+* [chiamata /stats Casi confermati](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20statistiche%20Confirmed.png)
 
-* [chiamata /stats Decessi](![Esempio chiamata statistiche Deaths](https://user-images.githubusercontent.com/72570036/97776461-7fd2c400-1b68-11eb-8409-2a37daf596f2.png))
+* [chiamata /stats Decessi](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20statistiche%20Deaths.png)
 
-* [chiamata /stats Guariti](![Esempio chiamata statistiche Recovered](https://user-images.githubusercontent.com/72570036/97776462-806b5a80-1b68-11eb-8c17-cc7184c62fc9.png))
+* [chiamata /stats Guariti](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20statistiche%20Recovered.png)
 
-* [chiamata /stats Casi attivi](![Esempio chiamata statistiche Active](https://user-images.githubusercontent.com/72570036/97776459-7f3a2d80-1b68-11eb-82b1-8f8a46f2f029.png))
+* [chiamata /stats Casi attivi](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20statistiche%20Active.png)
 
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
 
