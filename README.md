@@ -96,6 +96,18 @@ var      = la varianza.
 
 * [chiamata /stats Casi attivi](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20statistiche%20Active.png)
 
+### EXCEPTION
+
+La gestione delle exception è stata affidata alla classe madre Exception_Err (anch'essa estensione della classe RunTimeException), dalla quale derivano le classi NoCountry e NoDate, di cui abbiamo già descritto il funzionamento e i relativi messaggi d'errore; ne deriva anche la classe Notenought che gestisce l'eccezione nel caso in cui il file da scaricare durante la chiamata /char sia di dimensioni eccessive.
+Inoltre, nel package Exception è presente la classe ExceptionManager la quale viene richiamata nel metodo **handler** del controller, che permette di visualizzare le eccezioni sull'applicativo Postman.
+
+#### ESEMPI DI ECCEZIONI:
+
+[NoCountry](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20eccezione%20paese%20non%20trovato.png)
+[NoDate](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20eccezione%20data%20non%20corretta.png)
+[Notenought](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20Eccezione%20file%20troppo%20grande.png)
+
+
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
 
 
