@@ -28,7 +28,7 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 - /COUNTRIES: restituisce il nome di tutte le nazioni, relativo "slug", e codice ISO2.
 
-- /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
+- /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, decessi, guariti, casi attivi, data di acquisizione dati.  .
 
 #### ESEMPI DI CHIAMATE
 
@@ -36,17 +36,17 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 * [chiamata /info](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20info.png)
 
-Grazie al metodo **readurl( )** avviene la lettura dei dati contenuti nell'API reference, utilizzando inoltre il metodo **parsing()** attraverso il quale convertiamo i dati presi in input in oggetti JSON di tipo states; successivamente  il metodo **slugTake( )** preleva l' attributo slug e lo inserisce all'interno di un arraylist di stringhe.
-Entra ora in gioco il metodo **slugCheck( )** che ha la funzione di andare a confrontare la stringa inserita su Postman dall'utente con tutti gli slug dei paesi contenuti nell'arraylist; **slugCheck( )** è un metodo di tipo booleano che restituirà "false" (con relativo messaggio d'errore: "Il paese selezionato non fa parte della nostra lista!", gestito dalla classe Exception) in caso di slug non trovato, o "true" in caso positivo; in questa fase viene attivato il metodo **Parsing2( )** il quale trasformerà in formato JSON ciò che è stato letto dal metodo **readURL2( )**.
+Grazie al metodo **readurl( )** avviene la lettura dei dati contenuti nell'API reference, utilizzando inoltre il metodo **parsing()** convertiamo i dati presi in input in oggetti JSON di tipo states; successivamente  il metodo **slugTake( )** preleva l' attributo slug e lo inserisce all'interno di un arraylist di stringhe.
+Entra ora in gioco il metodo **slugCheck( )** che ha la funzione di andare a confrontare la stringa inserita su Postman dall'utente con tutti gli slug dei paesi contenuti nell'arraylist; **slugCheck( )** è un metodo di tipo booleano che restituirà "false" (con relativo messaggio d'errore: "Il paese selezionato non fa parte della nostra lista!", gestito dalla classe NoCountry) in caso di slug non trovato, o "true" in caso positivo; in questa fase viene attivato il metodo **Parsing2( )** il quale trasformerà in formato JSON ciò che è stato letto dal metodo **readURL2( )**.
 Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metodo **getURL( )**, il quale permette di modificare l'URL predefinita aggiungendo lo slug inserito dall'utente accedendo quindi ai dati di una nazione specifica.
 
 ### FILTRI
 
 Il programma permette di applicare due diversi filtri ai dati ottenuti dalle chiamate descritte in precedenza:
 
-/CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.
+/CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, decessi, guariti, casi attivi, data di acquisizione dati.
 
-Tale chiamata permette di andare a confrontare un carattere inserito dall'utente attraverso Postman, con l'arraylist contente i nomi dei paesi ottenuto richiamando il metodo **slugtake()**, successivamente verrà attivato il metodo parsing2() il quale convertirà in formato JSON i dati di tutte quelle nazioni che hanno per iniziale il carattere selezionato dall'utente.
+Tale chiamata permette di andare a confrontare un carattere inserito dall'utente attraverso Postman, con l'arraylist contente i nomi dei paesi ottenuto richiamando il metodo **slugtake()**, successivamente verrà attivato il metodo **parsing2()** il quale convertirà in formato JSON i dati di tutte quelle nazioni che hanno per iniziale il carattere selezionato dall'utente.
 
 #### ESEMPI DI CHIAMATE /CHAR:
 
@@ -62,7 +62,7 @@ Tale chiamata permette di andare a confrontare un carattere inserito dall'utente
 /PERIOD: restituisce in base alla nazione selezionata attraverso lo slug, tutti i dati relativi a tale paese all'interno di un periodo specifico impostato dall'utente attraverso l'inserimento di due date valide.
 
 Tale chiamata nel restituire i dati di una nazione filtrati in un determinato periodo effettua, inizialmente, un controllo sullo slug inserito tramite i metodi **slugtake()** e **slugcheck()**; in seguito grazie al metodo **datemanagement()** le date passate in input su Postman come stringhe, vengono convertite in formato Date, il quale ci permette di utilizzare le funzioni after e before per la gestione dell'ordine delle date inserite.
-Nel caso in cui le date scelte siano comprese nel database, vengono convertiti tutti quei dati che rispettano il periodo selezionato; in caso contrario il sistema genera un eccezione che darà luogo ad un messaggio d'errore: "le date inserite non appartengono al periodo fornito dall'API reference".
+Nel caso in cui le date scelte siano comprese nel database, vengono convertiti tutti quei dati che rispettano il periodo selezionato attraverso il metodo **parsingdata()**; in caso contrario il sistema genera l'eccezione NoDate che darà luogo ad un messaggio d'errore: "le date inserite non appartengono al periodo fornito dall'API reference".
 
 #### ESEMPI DI CHIAMATE /PERIOD:
 
@@ -74,7 +74,7 @@ Nel caso in cui le date scelte siano comprese nel database, vengono convertiti t
 
 ### STATISTICHE
 
-- /STATS: restituisce in base alla nazione selezionata attraverso lo slug, il calcolo di una tra le seguenti statistiche: media, massimo, minimo, varianza e deviazione standard; su di un qualsiasi dato tra: casi totali, morti, guariti, casi attivi.
+- /STATS: restituisce in base alla nazione selezionata attraverso lo slug, il calcolo di una tra le seguenti statistiche: media, massimo, minimo, varianza e deviazione standard; su di un qualsiasi dato tra: casi totali, decessi, guariti, casi attivi.
 
 Tale chiamata effettua, inizialmente, un controllo sullo slug inserito tramite i metodi **slugtake()** e **slugcheck()**; in base al parametro **statics** inserito su Postman, la classe StatsService invocherà il metodo corrispondente contenuto nella classe Stats.
 
@@ -190,8 +190,8 @@ UML Designer - strumento di modellazione grafica
 ## NOTE 
 
 Gli obiettivi sono stati aggiornati successivamente alla consegna del compito, in seguito ad un ricevimento svolto, poichè impossibilitati allo svolgimento degli obiettivi iniziali che presupponevano l'utilizzo delle funzioni premium all'interno dell'API dato.
-Le difficoltà che sono emerse durante la programmazione sono state:
 
+Le difficoltà che sono emerse durante la programmazione sono state:
 - Nella chiamata "/char" nel momento in cui vengono inserite delle lettere (ad esempio "a","b","s"..) alle quali corrispondono più di 10 paesi, il server ritorna un errore dovuto all'eccessiva dimensione del file da scaricare, non riuscendo a compensare quest'errore abbiamo fatto si che nel momento in cui la lista dei paesi è maggiore di 10, venga generata un'eccezione che ci informa di inserire un' altra lettera.
   
 "Ingegneria Informatica e dell'Automazione" - Università Politecnica delle Marche
