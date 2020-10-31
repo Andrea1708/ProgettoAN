@@ -103,9 +103,11 @@ Inoltre, nel package Exception è presente la classe ExceptionManager la quale v
 
 #### ESEMPI DI ECCEZIONI:
 
-[NoCountry](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20eccezione%20paese%20non%20trovato.png)
-[NoDate](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20eccezione%20data%20non%20corretta.png)
-[Notenought](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20Eccezione%20file%20troppo%20grande.png)
+* [NoCountry](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20eccezione%20paese%20non%20trovato.png)
+
+* [NoDate](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20eccezione%20data%20non%20corretta.png)
+
+* [Notenought](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20Eccezione%20file%20troppo%20grande.png)
 
 
 ## DIAGRAMMA DELLE CLASSI & PACKAGES
