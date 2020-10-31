@@ -80,11 +80,11 @@ Tale chiamata effettua, inizialmente, un controllo sullo slug inserito tramite i
 
 Data quindi una lista di nazioni, le statistiche disponibili sono le seguenti:
 
-max      = il numero massimo tra i dati considerati.
-min      = il numero minimo tra i dati considerati.
-media    = la media tra i dati considerati.
-devStd   = la deviazione standard.
-var      = la varianza.
+* max      = il numero massimo tra i dati considerati.
+* min      = il numero minimo tra i dati considerati.
+* media    = la media tra i dati considerati.
+* devStd   = la deviazione standard.
+* var      = la varianza.
 
 #### ESEMPI DI CHIAMATE /STATS:
 
