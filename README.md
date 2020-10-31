@@ -46,7 +46,7 @@ Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metod
 
 Il programma permette di applicare due diversi filtri ai dati ottenuti dalle chiamate descritte in precedenza:
 
-- /CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.
+/CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.
 
 Tale chiamata permette di andare a confrontare un carattere inserito dall'utente attraverso Postman, con l'arraylist contente i nomi dei paesi ottenuto richiamando il metodo **slugtake()**, successivamente verrà attivato il metodo parsing2() il quale convertirà in formato JSON i dati di tutte quelle nazioni che hanno per iniziale il carattere selezionato dall'utente.
 
@@ -58,7 +58,10 @@ Tale chiamata permette di andare a confrontare un carattere inserito dall'utente
 
 * [chiamata /char parte3](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20char%203.png)
 
-- /PERIOD: restituisce in base alla nazione selezionata attraverso lo slug, tutti i dati relativi a tale paese all'interno di un periodo specifico impostato dall'utente attraverso l'inserimento di due date valide.
+
+
+
+/PERIOD: restituisce in base alla nazione selezionata attraverso lo slug, tutti i dati relativi a tale paese all'interno di un periodo specifico impostato dall'utente attraverso l'inserimento di due date valide.
 
 Tale chiamata nel restituire i dati di una nazione filtrati in un determinato periodo effettua, inizialmente, un controllo sullo slug inserito tramite i metodi **slugtake()** e **slugcheck()**; in seguito grazie al metodo **datemanagement()** le date passate in input su Postman come stringhe, vengono convertite in formato Date, il quale ci permette di utilizzare le funzioni after e before per la gestione dell'ordine delle date inserite.
 Nel caso in cui le date scelte siano comprese nel database, vengono convertiti tutti quei dati che rispettano il periodo selezionato; in caso contrario il sistema genera un eccezione che darà luogo ad un messaggio d'errore: "le date inserite non appartengono al periodo fornito dall'API reference".
