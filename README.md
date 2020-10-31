@@ -30,10 +30,6 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 - /INFO: metadata di una singola nazione selezionata dall'utente attraverso lo "slug" contenente: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
 
-- /CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.  .
-
-- /PERIOD: restituisce in base alla nazione selezionata attraverso lo slug, tutti i dati relativi a tale paese all'interno di un periodo specifico impostato dall'utente attraverso l'inserimento di due date valide
-
 - /STATS: restituisce in base alla nazione selezionata attraverso lo slug, il calcolo di una tra le seguenti statistiche: media, massimo, minimo, varianza e deviazione standard; su di un qualsiasi dato tra: casi totali, morti, guariti, casi attivi.
 
 #### ESEMPI DI CHIAMATE
@@ -42,9 +38,19 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 * [chiamata /info](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20info.png)
 
-
+Grazie al metodo **readurl( )** avviene la lettura dei dati contenuti nell'API reference, utilizzando inoltre il metodo **parsing()** attraverso il quale convertiamo i dati presi in input in oggetti JSON di tipo states; successivamente  il metodo **slugTake( )** preleva l' attributo slug e lo inserisce all'interno di un arraylist di stringhe.
+Entra ora in gioco il metodo **slugCheck( )** che ha la funzione di andare a confrontare la stringa inserita su Postman dall'utente con tutti gli slug dei paesi contenuti nell'arraylist; **slugCheck( )** è un metodo di tipo booleano che restituirà "false" (con relativo messaggio d'errore: "Il paese selezionato non fa parte della nostra lista!", gestito dalla classe Exception) in caso di slug non trovato, o "true" in caso positivo; in questa fase viene attivato il metodo **Parsing2( )** il quale trasformerà in formato JSON ciò che è stato letto dal metodo **readURL2( )**.
+Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metodo **getURL( )**, il quale permette di modificare l'URL predefinita aggiungendo lo slug inserito dall'utente accedendo quindi ai dati di una nazione specifica.
 
 ### FILTRI
+
+Il programma permette di applicare due diversi filtri ai dati ottenuti dalle chiamate descritte in precedenza:
+
+- /CHAR: metadata di tutte le nazioni che iniziano con la lettera inserita dall'utente, contenenti: nome della nazione, sigla della nazione, latitudine, longitudine, casi totali, morti, guariti, casi attivi, data di acquisizione dati.
+
+Tale chiamata permette di andare a confrontare un carattere inserito dall'utente attraverso Postman, con l'arraylist contente i nomi dei paesi ottenuto richiamando il metodo **slugtake()**, successivamente verrà attivato il metodo parsing2() il quale convertirà in formato JSON i dati di tutte quelle nazioni che hanno per iniziale il carattere selezionato dall'utente.
+
+#### ESEMPI DI CHIAMATE:
 
 * [chiamata /char parte1](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20char%201.png)
 
@@ -52,21 +58,18 @@ ROTTA  | TIPO | PARAMETRI | DESCRIZIONE
 
 * [chiamata /char parte3](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20char%203.png)
 
+- /PERIOD: restituisce in base alla nazione selezionata attraverso lo slug, tutti i dati relativi a tale paese all'interno di un periodo specifico impostato dall'utente attraverso l'inserimento di due date valide.
+
+Tale chiamata nel restituire i dati di una nazione filtrati in un determinato periodo effettua, inizialmente, un controllo sullo slug inserito tramite i metodi **slugtake()** e **slugcheck()**; in seguito grazie al metodo **datemanagement()** le date passate in input su Postman come stringhe, vengono convertite in formato Date, il quale ci permette di utilizzare le funzioni after e before per la gestione dell'ordine delle date inserite.
+Nel caso in cui le date scelte siano comprese nel database, vengono convertiti tutti quei dati che rispettano il periodo selezionato; in caso contrario il sistema genera un eccezione che darà luogo ad un messaggio d'errore: "le date inserite non appartengono al periodo fornito dall'API reference".
+
+#### ESEMPI DI CHIAMATE:
+
 * [chiamata /period parte1](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20period%201.png)
 
 * [chiamata /period parte2](https://github.com/Andrea1708/ProgettoAN/blob/master/Esempi%20chiamate%20Postman/Esempio%20chiamata%20period%202.png)
 
 
-- metadata di un paese selezionato contenente i dati sopracitati riferiti ad una specifica nazione richiesta dall'utente.
-
-Grazie al metodo **readurl( )** otteniamo degli oggetti JSON di tipo states, da qui il metodo **SlugTake( )** preleva tali attributi e li inserisce all'interno di un arraylist di stringhe.
-Entra ora in gioco il metodo **SlugCheck( )** che ha la funzione di andare a confrontare la stringa inserita su Postman dall'utente con tutti gli slug dei paesi contenuti nell'arraylist; **SlugCheck( )** è un metodo di tipo booleano che restituirà "false" (con relativo messaggio d'errore, gestito dalla classe Exception) in caso di slug non trovato, o "true" in caso positivo, in questa fase viene attivato il metodo **Parsing2( )** il quale trasformerà in formato JSON ciò che è stato letto dal metodo **readURL2( )**.
-Tutto ciò avviene attraverso l'utilizzo della classe UrlService ed al suo metodo **getURL( )**, il quale permette di modificare l'URL predefinita aggiungendo lo slug inserito dall'utente accedendo quindi ai dati di una nazione specifica.
-
-- metadata di un paese selezionato contenente i dati sopracitati a partire da una specifica data richiesta dall'utente.
-
-Il metodo **GetURL2( )** come nel caso precedente, va a modificare l'URL predefinita aggiungendo nome della nazione e data scelta, inseriti anche questa volta dall'utente, rendendo cosi tale URL leggibile dal metodo **ReadURL3( )**, il quale richiamerà il metodo **Parsing3( )**; esso svolge il compito di restituire un arraylist contenente i dati relativi al virus Covid-19 dalla data selezionata in poi, della nazione specificata.
-Durante tale processo avviene una verifica sull'inserimento della nazione, nel caso non fosse una nazione esistente nel database, verrà mostrato  un messaggio di errore personalizzato, sempre gestio dalla classe Exception
 
 ### STATISTICHE
 
